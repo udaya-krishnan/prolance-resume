@@ -143,7 +143,7 @@ function FeatureCell({ included }: { included: boolean }) {
 }
 
 export default function Pricing() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+//   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <>
