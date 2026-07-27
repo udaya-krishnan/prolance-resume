@@ -75,64 +75,64 @@ const featureDetails = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What makes Prolance Resume different from other resume writing services in India?",
-    a: "Five core commitments: every resume is prepared after a detailed one-on-one consultation, an ATS score of 80+ is guaranteed on every resume, 30 days of free editing support is included post-delivery, same-day delivery is available, and our exclusive AI prompt set helps you customise your resume for any job description independently.",
-  },
-  {
-    q: "What does ATS-friendly mean, and why does it matter?",
-    a: "ATS stands for Applicant Tracking System — software used by over 75% of Indian and global employers to automatically filter resumes before a human reads them. An ATS-friendly resume is formatted and keyworded to pass this automated screening.",
-  },
-  {
-    q: "How quickly will I receive my resume?",
-    a: "Standard orders are delivered within 24–48 hours of receiving your career details. Priority same-day delivery is available for an additional ₹300.",
-  },
-  {
-    q: "What is the starting price for a Prolance Resume?",
-    a: "Our Starter package begins at ₹899. Standard packages start at ₹1,299, and Premium packages at ₹1,499.",
-  },
-  {
-    q: "What are the three package tiers and what is the difference?",
-    a: "Starter includes your ATS-optimised resume, the ATS Score 80+ guarantee, 30 days of editing support, and Word + PDF delivery. Standard adds a cover letter and Resume Customisation AI Prompts. Premium adds the Interview Prep Prompt Guide and an Additional Infographic Resume, bundled at a significant saving versus buying individually.",
-  },
-  {
-    q: "What are the Resume Customisation AI Prompts included in every package?",
-    a: "A Prolance exclusive — a curated set of tested AI prompts included at no extra cost in Standard & Premium packages. These let you tailor your resume to any specific job description using Claude, ChatGPT, or Gemini — without losing the professional quality of your original Prolance document.",
-  },
-  {
-    q: "What are the three Premium PDF guides?",
-    a: "The AI-Powered Interview Preparation Guide contains role-specific interview questions, STAR-method answer frameworks, and salary negotiation scripts. The LinkedIn Content Prompt Guide includes tested prompts for growing your LinkedIn presence. The Resume Customisation Guide teaches you how to independently tailor your resume for different job applications — all delivered as downloadable PDFs.",
-  },
-  {
-    q: "What is the LinkedIn Profile Optimisation service and how is it priced?",
-    a: "A complete LinkedIn profile makeover covering your headline, about section, experience rewrites, skills section, SEO keyword audit, banner guidance, and recommendations strategy. Available standalone at ₹1,999, or as an add-on to any resume package for up to 30% off.",
-  },
-  {
-    q: "Do you write resumes for international job markets?",
-    a: "Yes. We specialise in country-specific resume formats for the UK, USA, Canada, Australia, New Zealand, and GCC countries including UAE, Saudi Arabia, Qatar, Kuwait, and Bahrain — following each market's formatting conventions, keyword norms, and structural requirements, including no-photo and no-date-of-birth rules where applicable.",
-  },
-  {
-    q: "What does the 30 Days Editing Support cover?",
-    a: "For 30 days after delivery, you can request free edits to your resume — update a job title, add a certification, tweak your skills for a different role, or restructure any section. Just message your assigned writer on WhatsApp and we'll make the changes at no additional cost.",
-  },
-  {
-    q: "What industries do you cover?",
-    a: "20+ industries including IT and software development, healthcare and nursing, finance and banking, engineering, oil and gas, marketing, hospitality, education, legal, logistics, pharma, cybersecurity, construction, telecom, digital marketing, and freshers across all fields.",
-  },
-  {
-    q: "What if I am not happy with my resume?",
-    a: "We offer unlimited revisions until you're completely satisfied, at no additional cost. Your assigned writer stays with you throughout the process and works closely with you to get the resume exactly where you want it.",
-  },
-  {
-    q: "Is my personal information safe with Prolance Resume?",
-    a: "Absolutely. We never share your personal information with any third party. All communication is handled directly between you and your assigned writer via WhatsApp, and we follow strict data security practices throughout.",
-  },
-  {
-    q: "Can freshers and recent graduates use Prolance Resume?",
-    a: "Yes — and we highly recommend it. Our Starter package at ₹899 is specifically designed for students and recent graduates who have limited experience but want a resume that stands out through skills, projects, certifications, and academic achievements.",
-  },
-];
+// const faqs = [
+//   {
+//     q: "What makes Prolance Resume different from other resume writing services in India?",
+//     a: "Five core commitments: every resume is prepared after a detailed one-on-one consultation, an ATS score of 80+ is guaranteed on every resume, 30 days of free editing support is included post-delivery, same-day delivery is available, and our exclusive AI prompt set helps you customise your resume for any job description independently.",
+//   },
+//   {
+//     q: "What does ATS-friendly mean, and why does it matter?",
+//     a: "ATS stands for Applicant Tracking System — software used by over 75% of Indian and global employers to automatically filter resumes before a human reads them. An ATS-friendly resume is formatted and keyworded to pass this automated screening.",
+//   },
+//   {
+//     q: "How quickly will I receive my resume?",
+//     a: "Standard orders are delivered within 24–48 hours of receiving your career details. Priority same-day delivery is available for an additional ₹300.",
+//   },
+//   {
+//     q: "What is the starting price for a Prolance Resume?",
+//     a: "Our Starter package begins at ₹899. Standard packages start at ₹1,299, and Premium packages at ₹1,499.",
+//   },
+//   {
+//     q: "What are the three package tiers and what is the difference?",
+//     a: "Starter includes your ATS-optimised resume, the ATS Score 80+ guarantee, 30 days of editing support, and Word + PDF delivery. Standard adds a cover letter and Resume Customisation AI Prompts. Premium adds the Interview Prep Prompt Guide and an Additional Infographic Resume, bundled at a significant saving versus buying individually.",
+//   },
+//   {
+//     q: "What are the Resume Customisation AI Prompts included in every package?",
+//     a: "A Prolance exclusive — a curated set of tested AI prompts included at no extra cost in Standard & Premium packages. These let you tailor your resume to any specific job description using Claude, ChatGPT, or Gemini — without losing the professional quality of your original Prolance document.",
+//   },
+//   {
+//     q: "What are the three Premium PDF guides?",
+//     a: "The AI-Powered Interview Preparation Guide contains role-specific interview questions, STAR-method answer frameworks, and salary negotiation scripts. The LinkedIn Content Prompt Guide includes tested prompts for growing your LinkedIn presence. The Resume Customisation Guide teaches you how to independently tailor your resume for different job applications — all delivered as downloadable PDFs.",
+//   },
+//   {
+//     q: "What is the LinkedIn Profile Optimisation service and how is it priced?",
+//     a: "A complete LinkedIn profile makeover covering your headline, about section, experience rewrites, skills section, SEO keyword audit, banner guidance, and recommendations strategy. Available standalone at ₹1,999, or as an add-on to any resume package for up to 30% off.",
+//   },
+//   {
+//     q: "Do you write resumes for international job markets?",
+//     a: "Yes. We specialise in country-specific resume formats for the UK, USA, Canada, Australia, New Zealand, and GCC countries including UAE, Saudi Arabia, Qatar, Kuwait, and Bahrain — following each market's formatting conventions, keyword norms, and structural requirements, including no-photo and no-date-of-birth rules where applicable.",
+//   },
+//   {
+//     q: "What does the 30 Days Editing Support cover?",
+//     a: "For 30 days after delivery, you can request free edits to your resume — update a job title, add a certification, tweak your skills for a different role, or restructure any section. Just message your assigned writer on WhatsApp and we'll make the changes at no additional cost.",
+//   },
+//   {
+//     q: "What industries do you cover?",
+//     a: "20+ industries including IT and software development, healthcare and nursing, finance and banking, engineering, oil and gas, marketing, hospitality, education, legal, logistics, pharma, cybersecurity, construction, telecom, digital marketing, and freshers across all fields.",
+//   },
+//   {
+//     q: "What if I am not happy with my resume?",
+//     a: "We offer unlimited revisions until you're completely satisfied, at no additional cost. Your assigned writer stays with you throughout the process and works closely with you to get the resume exactly where you want it.",
+//   },
+//   {
+//     q: "Is my personal information safe with Prolance Resume?",
+//     a: "Absolutely. We never share your personal information with any third party. All communication is handled directly between you and your assigned writer via WhatsApp, and we follow strict data security practices throughout.",
+//   },
+//   {
+//     q: "Can freshers and recent graduates use Prolance Resume?",
+//     a: "Yes — and we highly recommend it. Our Starter package at ₹899 is specifically designed for students and recent graduates who have limited experience but want a resume that stands out through skills, projects, certifications, and academic achievements.",
+//   },
+// ];
 
 function FeatureCell({ included }: { included: boolean }) {
   return included ? (
@@ -322,7 +322,7 @@ export default function Pricing() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-6 pb-20">
+      {/* <section className="mx-auto max-w-3xl px-6 pb-20">
         <div className="reveal text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">FAQ</p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Pricing Questions, Answered</h2>
@@ -348,7 +348,7 @@ export default function Pricing() {
             );
           })}
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24">

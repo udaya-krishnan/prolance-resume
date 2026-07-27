@@ -8,6 +8,7 @@ const links = [
   { to: "/resume-templates", label: "Resume Templates" },
   { to: "/linkedin-optimisation", label: "LinkedIn Optimisation" },
   { to: "/blogs", label: "Blogs" },
+  { to: "/faq", label: "Faq" },
   { to: "/contact", label: "Contact" },
 ];
 
