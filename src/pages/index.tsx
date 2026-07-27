@@ -81,7 +81,7 @@ const testimonials = [
   },
 ];
 
-const partners = ["Google", "Microsoft", "Amazon", "Stripe", "Meta", "Adobe", "Swiggy", "Razorpay", "Zomato", "Flipkart"];
+// const partners = ["Google", "Microsoft", "Amazon", "Stripe", "Meta", "Adobe", "Swiggy", "Razorpay", "Zomato", "Flipkart"];
 
 const pricing = [
   {
@@ -416,7 +416,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-semibold">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                  <div className="text-xs text-muted-foreground">{t.meta}</div>
                 </div>
               </div>
             </div>
