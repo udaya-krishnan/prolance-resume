@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight, CheckCircle2, ShieldCheck, Sparkle, Clock, Zap,
-  ChevronDown, FileText, Globe2, MessageSquareText, BookOpenCheck,
+   FileText, Globe2, MessageSquareText, BookOpenCheck,
 } from "lucide-react";
 
 const tiers = [
