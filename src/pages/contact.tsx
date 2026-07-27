@@ -1,8 +1,40 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 
-function Field({ label, name, type = "text", placeholder, required, as, options }: {
+const serviceOptions = [
+  "ATS Resume Writing — Starter (₹899)",
+  "ATS Resume Writing — Standard (₹1,299)",
+  "ATS Resume Writing — Premium (₹1,499)",
+  "International Resume — Gulf/UK/USA/AU (₹1,699)",
+  "LinkedIn Profile Optimisation (₹1,999)",
+  "Cover Letter Writing",
+  "SOP Writing for University Admissions",
+  "Not sure — recommend the right package for me",
+];
+
+const targetMarkets = [
+  "India (any city)",
+  "UAE / Dubai",
+  "Saudi Arabia",
+  "Qatar",
+  "Kuwait / Bahrain",
+  "UK",
+  "USA / Canada",
+  "Australia / New Zealand",
+  "Europe",
+  "Other",
+];
+
+function Field({
+  label,
+  name,
+  type = "text",
+  placeholder,
+  required,
+  as,
+  options,
+}: {
   label: string;
   name: string;
   type?: string;
@@ -14,17 +46,28 @@ function Field({ label, name, type = "text", placeholder, required, as, options 
   if (as === "select") {
     return (
       <div>
-        <label className="text-sm font-medium">{label}</label>
-        <select name={name} className="mt-1.5 w-full rounded-xl border border-input bg-transparent px-4 py-2.5 text-sm outline-none transition">
-          {options?.map((o) => <option key={o}>{o}</option>)}
+        <label className="text-sm font-medium text-foreground/80">{label}</label>
+        <select
+          name={name}
+          className="mt-1.5 w-full rounded-xl border border-input bg-transparent px-4 py-2.5 text-sm outline-none transition focus:border-[color:var(--brand)] focus:ring-1 focus:ring-[color:var(--brand)]"
+        >
+          {options?.map((o) => (
+            <option key={o}>{o}</option>
+          ))}
         </select>
       </div>
     );
   }
   return (
     <div>
-      <label className="text-sm font-medium">{label}</label>
-      <input type={type} name={name} placeholder={placeholder} required={required} className="mt-1.5 w-full rounded-xl border border-input bg-transparent px-4 py-2.5 text-sm outline-none transition" />
+      <label className="text-sm font-medium text-foreground/80">{label}</label>
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        required={required}
+        className="mt-1.5 w-full rounded-xl border border-input bg-transparent px-4 py-2.5 text-sm outline-none transition focus:border-[color:var(--brand)] focus:ring-1 focus:ring-[color:var(--brand)]"
+      />
     </div>
   );
 }
@@ -37,7 +80,7 @@ export default function Contact() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      toast.success("Message sent — we'll get back within a few hours.");
+      toast.success("Message sent! We'll get back to you within a few hours via WhatsApp or email.");
       (e.target as HTMLFormElement).reset();
     }, 800);
   }
@@ -45,82 +88,169 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
 
-      <div className="relative overflow-hidden">
+      {/* HERO */}
+      <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-32 left-0 h-96 w-96 rounded-full bg-blue-300/25 blur-3xl" />
-          <div className="absolute top-10 right-0 h-96 w-96 rounded-full bg-blue-500/25 blur-3xl" />
+          <div className="absolute -top-32 left-0 h-96 w-96 animate-blob rounded-full bg-[color:var(--brand-cyan)]/25 blur-3xl" />
+          <div className="absolute top-10 right-0 h-96 w-96 animate-blob rounded-full bg-[color:var(--brand)]/25 blur-3xl [animation-delay:-6s]" />
         </div>
         <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border bg-white/60 px-3 py-1 text-xs font-medium backdrop-blur">
-            Contact
+          <span className="reveal inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-3 py-1 text-xs font-medium backdrop-blur">
+            Contact Us
           </span>
-          <h1 className="mt-5 text-4xl font-bold sm:text-5xl lg:text-6xl">
-            Let's talk careers.
+          <h1 className="reveal mt-5 font-display text-4xl font-bold sm:text-5xl lg:text-6xl">
+            Start with a <span className="text-gradient-brand">Free Consultation</span>.
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-gray-500">
-            Drop a message and we'll respond within a few hours.
+          <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
+            Tell us your target role and market — we'll recommend the right package instantly.
+            Message us on WhatsApp for the fastest response.
           </p>
+          {/* Trust bar */}
+          <div className="reveal mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-[color:var(--brand)]" /> ATS Score 80+ Guaranteed</span>
+            <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-[color:var(--brand)]" /> 24–48 Hour Delivery</span>
+            <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-[color:var(--brand)]" /> 30 Days Free Editing</span>
+            <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-[color:var(--brand)]" /> Secure & Confidential</span>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mx-auto max-w-7xl px-6 pb-24">
+      {/* MAIN CONTENT */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
         <div className="grid gap-8 lg:grid-cols-5">
 
+          {/* CONTACT FORM */}
           <div className="lg:col-span-3">
-            <form onSubmit={onSubmit} className="rounded-3xl border bg-white p-8 shadow-xl">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Name" name="name" type="text" placeholder="Aarav Mehta" required />
-                <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
-                <Field label="Phone (optional)" name="phone" type="tel" placeholder="+91 ..." />
-                <Field label="Service" name="service" as="select" options={["Resume Writing", "LinkedIn Optimization", "Cover Letter", "Career Coaching", "Other"]} />
+            <form onSubmit={onSubmit} className="rounded-3xl border border-border bg-white p-8 shadow-xl shadow-[color:var(--brand)]/5">
+              <h2 className="font-display text-xl font-bold">Send us a message</h2>
+              <p className="mt-1 text-sm text-muted-foreground">We respond within a few hours. For the fastest reply, WhatsApp us directly.</p>
+
+              <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                <Field label="Full Name *" name="name" placeholder="Your full name" required />
+                <Field label="Email Address *" name="email" type="email" placeholder="you@email.com" required />
+                <Field label="WhatsApp Number" name="phone" type="tel" placeholder="+91 6360817439" />
+                <Field
+                  label="Service Interested In"
+                  name="service"
+                  as="select"
+                  options={serviceOptions}
+                />
+                <div className="sm:col-span-2">
+                  <Field
+                    label="Target Job Market"
+                    name="market"
+                    as="select"
+                    options={targetMarkets}
+                  />
+                </div>
               </div>
+
               <div className="mt-5">
-                <label className="text-sm font-medium">Tell us about your goals</label>
-                <textarea name="message" required rows={5} placeholder="A few sentences about your current role..." className="mt-1.5 w-full rounded-xl border bg-transparent px-4 py-3 text-sm outline-none transition" />
+                <label className="text-sm font-medium text-foreground/80">
+                  Tell us about your goals *
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="Share your current role, target role, years of experience, and what you're looking to achieve. The more detail you give, the better we can help."
+                  className="mt-1.5 w-full rounded-xl border border-input bg-transparent px-4 py-3 text-sm outline-none transition focus:border-[color:var(--brand)] focus:ring-1 focus:ring-[color:var(--brand)]"
+                />
               </div>
-              <button type="submit" disabled={loading} className="mt-6 w-full rounded-full gradient-brand px-6 py-3.5 text-sm font-semibold text-white disabled:opacity-60">
-                {loading ? "Sending..." : "Send message"}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="mt-6 w-full rounded-full gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/30 transition hover:scale-[1.02] disabled:opacity-60"
+              >
+                {loading ? "Sending..." : "Send Message"}
               </button>
+
+              <p className="mt-3 text-center text-xs text-muted-foreground">
+                🔒 Your information is secure and confidential. We never share your details with third parties.
+              </p>
             </form>
           </div>
 
+          {/* RIGHT SIDEBAR */}
           <div className="flex flex-col gap-5 lg:col-span-2">
+
+            {/* WhatsApp — primary CTA */}
             <div className="rounded-3xl gradient-brand p-7 text-white">
-              <h3 className="text-xl font-bold">Reach us directly</h3>
-              <ul className="mt-5 space-y-4 text-sm">
-                <li className="flex items-start gap-3">
-                  <Mail className="mt-0.5 h-4 w-4" />
-                  <span>hello@prolanceresume.com</span>
+              <h3 className="font-display text-xl font-bold">Fastest way to reach us</h3>
+              <p className="mt-2 text-sm text-white/85">
+                Message us on WhatsApp for an instant free consultation. Tell us your target role and market
+                — we'll recommend the right package right away.
+              </p>
+              <a
+                href="https://wa.me/916360817439?text=Hi%20Prolance%20Resume!%20I%20am%20interested%20in%20your%20resume%20writing%20services.%20Can%20you%20recommend%20the%20right%20package%20for%20me%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[color:var(--brand-deep)] transition hover:scale-[1.02]"
+              >
+                <MessageCircle className="h-4 w-4 text-[#25D366]" />
+                WhatsApp Us — Free Consultation
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <ul className="mt-5 space-y-2.5 text-sm text-white/80">
+                <li className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 shrink-0" />
+                  +91 6360817439
                 </li>
-                <li className="flex items-start gap-3">
-                  <Phone className="mt-0.5 h-4 w-4" />
-                  <span>+91 6360817439</span>
+                <li className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 shrink-0" />
+                  contact@prolanceresume.com
                 </li>
-                <li className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-4 w-4" />
-                  <span>Bengaluru, Karnataka, India</span>
+                <li className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 shrink-0" />
+                  Tirur, Malappuram, Kerala, India
                 </li>
-                <li className="flex items-start gap-3">
-                  <Clock className="mt-0.5 h-4 w-4" />
-                  <span>Mon-Sat 10 AM - 7 PM IST</span>
+                <li className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 shrink-0" />
+                  Mon–Sun, 9 AM – 9 PM IST
                 </li>
               </ul>
             </div>
 
-            <div className="flex items-center justify-between rounded-3xl border bg-white p-6">
-              <div>
-                <div className="text-lg font-semibold">Chat on WhatsApp</div>
-                <p className="text-sm text-gray-500">Fastest way to reach us</p>
+            {/* Pricing quick reference */}
+            <div className="rounded-3xl border border-border bg-white p-6">
+              <h3 className="font-display text-base font-bold">Quick Pricing Reference</h3>
+              <ul className="mt-4 space-y-3 text-sm">
+                {[
+                  { name: "Starter Resume", price: "₹899" },
+                  { name: "Standard Resume", price: "₹1,299" },
+                  { name: "Premium Resume", price: "₹1,499" },
+                  { name: "International Resume", price: "₹1,699" },
+                  { name: "LinkedIn Optimisation", price: "₹1,999" },
+                  { name: "Express Delivery (add-on)", price: "+₹300" },
+                ].map((item) => (
+                  <li key={item.name} className="flex items-center justify-between">
+                    <span className="text-foreground/70">{item.name}</span>
+                    <span className="font-semibold text-[color:var(--brand)]">{item.price}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-xs text-muted-foreground">
+                All packages include ATS Score 80+ guarantee and 30 days editing support.
+              </p>
+            </div>
+
+            {/* Response time */}
+            <div className="rounded-2xl border border-border bg-white/60 p-5 backdrop-blur">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full gradient-brand text-white">
+                  <Clock className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold">Typical Response Time</div>
+                  <div className="text-xs text-muted-foreground">WhatsApp: Within 1 hour · Email: Within 3 hours</div>
+                </div>
               </div>
-              <a href="https://wa.me/+916360817439" target="_blank" rel="noopener noreferrer" className="grid h-12 w-12 place-items-center rounded-full bg-[#25D366] text-white">
-                <MessageCircle className="h-5 w-5" />
-              </a>
             </div>
           </div>
 
         </div>
-      </div>
-
+      </section>
     </div>
   );
 }

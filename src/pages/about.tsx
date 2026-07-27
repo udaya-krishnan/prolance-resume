@@ -1,107 +1,127 @@
 import { Link } from "react-router-dom";
-import { Heart, Users, Award, Target, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { posts } from "../lib/blog-data";
 
-const values = [
-  { icon: Heart, title: "Human-first", desc: "No templates. No AI slop. Real writers who actually read your story." },
-  { icon: Award, title: "Premium quality", desc: "We obsess over every word. Two-round revision policy on every project." },
-  { icon: Target, title: "Outcome-led", desc: "We measure success in interview calls, not file deliveries." },
-  { icon: Users, title: "Clients for life", desc: "Most of our work comes from referrals — that's our north star." },
-];
+const categories = ["All", "ATS Guide", "Resume Tips", "LinkedIn", "Gulf Jobs", "IT Careers", "Finance Careers", "Freshers", "Career Basics"];
 
-const team = [
-  { name: "Ananya Iyer", role: "Founder & Lead Writer", bio: "Ex-recruiter at two unicorns. 10+ years in talent acquisition." },
-  { name: "Vikram Shah", role: "Head of Coaching", bio: "ICF-certified coach. Helped 800+ professionals navigate transitions." },
-  { name: "Neha Kulkarni", role: "Senior Writer", bio: "MBA + journalism background. Specializes in product & marketing." },
-  { name: "Karthik Reddy", role: "Tech Resume Specialist", bio: "Ex-engineer at a FAANG company. Knows what tech recruiters scan for." },
-];
-
-export default function About() {
+export default function Blogs() {
   return (
     <>
+      {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-24 -left-24 h-[420px] w-[420px] animate-blob rounded-full bg-[color:var(--brand-cyan)]/30 blur-3xl" />
-          <div className="absolute top-10 right-0 h-[420px] w-[420px] animate-blob rounded-full bg-[color:var(--brand)]/30 blur-3xl [animation-delay:-6s]" />
+          <div className="absolute -top-24 right-0 h-[420px] w-[420px] animate-blob rounded-full bg-[color:var(--brand)]/25 blur-3xl" />
         </div>
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2">
-          <div className="reveal">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-3 py-1 text-xs font-medium backdrop-blur">
-              About Prolance
+        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
+          <span className="reveal inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-3 py-1 text-xs font-medium backdrop-blur">
+            Career Blog
+          </span>
+          <h1 className="reveal mt-5 font-display text-4xl font-bold sm:text-5xl lg:text-6xl">
+            Resume & Career Advice <span className="text-gradient-brand">That Gets You Hired</span>.
+          </h1>
+          <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
+            Practical guides on ATS resumes, LinkedIn optimisation, and job hunting — written by senior career
+            professionals for Indian professionals targeting India, Gulf, and global markets.
+          </p>
+        </div>
+      </section>
+
+      {/* CATEGORY FILTER */}
+      <section className="mx-auto max-w-7xl px-6 pb-8">
+        <div className="reveal flex flex-wrap justify-center gap-2">
+          {categories.map((cat) => (
+            <span
+              key={cat}
+              className={`cursor-pointer rounded-full border px-4 py-1.5 text-xs font-medium transition hover:border-[color:var(--brand)] hover:text-[color:var(--brand)] ${
+                cat === "All"
+                  ? "border-transparent gradient-brand text-white"
+                  : "border-border bg-white text-foreground/70"
+              }`}
+            >
+              {cat}
             </span>
-            <h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
-              We help India's best <span className="text-gradient-brand">tell their story</span>.
-            </h1>
-            <p className="mt-6 text-muted-foreground">
-              Prolance Resume started in 2019 with one frustration: brilliant Indian professionals
-              were being overlooked because their resumes didn't do them justice. We set out to fix that.
-            </p>
-            <p className="mt-4 text-muted-foreground">
-              Today, we're a team of senior writers, ex-recruiters and career coaches working with
-              clients across 30+ countries — from new graduates to C-suite leaders.
-            </p>
-          </div>
-          <div className="reveal relative">
-            <div className="absolute -inset-6 rounded-[2rem] gradient-brand opacity-20 blur-2xl" />
-            <div className="relative grid gap-4 sm:grid-cols-2">
-              {[
-                { k: "5,000+", v: "Clients served" },
-                { k: "30+", v: "Countries" },
-                { k: "4.9/5", v: "Avg. rating" },
-                { k: "87%", v: "Interview rate" },
-              ].map((s) => (
-                <div key={s.v} className="rounded-2xl glass p-6 text-center">
-                  <div className="font-display text-3xl font-bold text-gradient-brand">{s.k}</div>
-                  <div className="mt-1 text-sm text-muted-foreground">{s.v}</div>
+          ))}
+        </div>
+      </section>
+
+      {/* BLOG GRID */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/blogs/${p.slug}`}
+              className="reveal group flex flex-col overflow-hidden rounded-3xl border border-border bg-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-[color:var(--brand)]/10"
+            >
+              {/* Cover */}
+              <div className={`relative h-44 bg-gradient-to-br ${p.cover}`}>
+                <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[color:var(--brand-deep)]">
+                  {p.category}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-lg font-semibold leading-snug transition group-hover:text-[color:var(--brand)]">
+                  {p.title}
+                </h3>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{p.excerpt}</p>
+
+                {/* Keywords */}
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {p.keywords.map((kw) => (
+                    <span
+                      key={kw}
+                      className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
+                    >
+                      {kw}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
+
+                <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1.5">
+                    <Calendar className="h-3.5 w-3.5" /> {p.date}
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <Clock className="h-3.5 w-3.5" /> {p.readTime}
+                  </span>
+                </div>
+
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--brand)] transition group-hover:gap-2">
+                  Read article <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* CTA below blogs */}
+        <div className="reveal mt-16 rounded-3xl border border-border bg-white/60 p-8 text-center backdrop-blur">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Ready to Get Shortlisted?</p>
+          <h2 className="mt-3 font-display text-2xl font-bold sm:text-3xl">
+            Stop reading. Start applying — with a resume that works.
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+            Get a professionally written, ATS-optimised resume starting at just ₹899. Delivered in 24–48 hours
+            with 30 days of free editing support.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <a
+              href="https://wa.me/916360817439"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/30 transition hover:scale-[1.03]"
+            >
+              WhatsApp Us — Free Consultation <ArrowRight className="h-4 w-4" />
+            </a>
+            <Link
+              to="/pricing"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold transition hover:bg-white/80"
+            >
+              View Pricing Plans
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="reveal text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">What we believe</p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Our values</h2>
-        </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((v) => (
-            <div key={v.title} className="reveal rounded-2xl border border-border bg-white p-6 transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="grid h-12 w-12 place-items-center rounded-xl gradient-brand text-white">
-                <v.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-semibold">{v.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{v.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="reveal text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">The team</p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Senior people. No juniors. No outsourcing.</h2>
-        </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((m) => (
-            <div key={m.name} className="reveal rounded-2xl border border-border bg-white p-6 text-center">
-              <div className="mx-auto grid h-20 w-20 place-items-center rounded-full gradient-brand text-2xl font-bold text-white">
-                {m.name.split(" ").map((n) => n[0]).join("")}
-              </div>
-              <h3 className="mt-4 font-display text-lg font-semibold">{m.name}</h3>
-              <p className="text-xs font-medium text-[color:var(--brand)]">{m.role}</p>
-              <p className="mt-3 text-sm text-muted-foreground">{m.bio}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-8">
-        <div className="reveal relative overflow-hidden rounded-3xl gradient-brand p-10 text-white md:p-16">
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">Let's build your next chapter together.</h2>
-          <Link to="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[color:var(--brand-deep)]">
-            Get in touch <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
       </section>
     </>
