@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerServices = [
   { label: "ATS Resume Writing", to: "/services" },
@@ -19,14 +19,14 @@ const footerLocations = [
   { label: "Resume Writing in Saudi Arabia", to: "/resume-writing-saudi-arabia" },
 ];
 
-const footerCompany = [
-  { label: "Home", to: "/" },
-  { label: "Pricing", to: "/pricing" },
-  { label: "Blog", to: "/blogs" },
-  { label: "Contact", to: "/contact" },
-];
+// const footerCompany = [
+//   { label: "Home", to: "/" },
+//   { label: "Pricing", to: "/pricing" },
+//   { label: "Blog", to: "/blogs" },
+//   { label: "Contact", to: "/contact" },
+// ];
 
-export function Footer() {
+export function Footer() {  
   return (
     <footer className="relative mt-24 overflow-hidden bg-[color:var(--brand-ink)] text-white">
       {/* Background glows */}
