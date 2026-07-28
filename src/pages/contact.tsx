@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 
+// 1. Get a free access key at https://web3forms.com (no signup, just email verification)
+// 2. Paste it here — every form submission will be emailed straight to the inbox you registered.
+const WEB3FORMS_ACCESS_KEY = "1630ed52-7f38-4f71-9f1d-26ba08d9af86";
+
 const serviceOptions = [
   "ATS Resume Writing — Starter (₹899)",
   "ATS Resume Writing — Standard (₹1,299)",
@@ -75,14 +79,37 @@ function Field({
 export default function Contact() {
   const [loading, setLoading] = useState(false);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Web3Forms required/optional fields
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.append("subject", "New enquiry from Prolance Resume website");
+    formData.append("from_name", "Prolance Resume Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Message sent! We'll get back to you within a few hours via WhatsApp or email.");
+        form.reset();
+      } else {
+        toast.error("Something went wrong. Please try WhatsApp instead, or try again in a moment.");
+      }
+    } catch (err) {
+      toast.error("Couldn't send your message. Please try WhatsApp instead, or try again in a moment.");
+    } finally {
       setLoading(false);
-      toast.success("Message sent! We'll get back to you within a few hours via WhatsApp or email.");
-      (e.target as HTMLFormElement).reset();
-    }, 800);
+    }
   }
 
   return (

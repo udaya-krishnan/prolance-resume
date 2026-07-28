@@ -130,6 +130,59 @@ export default function ResumeTemplates() {
         </div>
       </section>
 
+      {/* SAMPLE LAYOUT PREVIEW */}
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="reveal">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">See It In Action</p>
+            <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
+              A Format That Reads Clean to Both Humans and ATS Software
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Every resume we write follows the same underlying discipline: a clear summary up top, skills
+              grouped for fast scanning, achievement-led experience bullets, and education/languages kept
+              short and easy to parse. No tables, no text boxes, no graphics that confuse ATS parsers —
+              just a structure that gets you past the filter and read by a human.
+            </p>
+            <ul className="mt-6 space-y-2.5 text-sm">
+              {[
+                "Single-column layout — parses cleanly on every major ATS",
+                "Section headers ATS software recognises instantly",
+                "Achievement bullets, not duty lists",
+                "Skills grouped for fast recruiter scanning",
+              ].map((f) => (
+                <li key={f} className="flex items-start gap-2 text-foreground/80">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[color:var(--brand)]" />
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/contact"
+              className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--brand-deep)]"
+            >
+              Get your resume written this way <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          {/* Real sample resume preview */}
+          <div className="reveal relative">
+            <div className="absolute -inset-6 rounded-[2rem] gradient-brand opacity-15 blur-2xl" />
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
+              <img
+                src="/resume.jpeg"
+                alt="Sample ATS-optimised resume written by Prolance Resume"
+                className="w-full object-contain"
+              />
+              <div className="flex items-center justify-between border-t border-border bg-white px-5 py-3">
+                <span className="text-[11px] font-medium text-muted-foreground">Tested against Workday, Taleo, Greenhouse, iCIMS</span>
+                <span className="rounded-full gradient-brand px-2.5 py-1 text-[10px] font-bold text-white">ATS 80+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INDUSTRIES */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="reveal text-center">

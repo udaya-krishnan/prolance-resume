@@ -275,7 +275,7 @@ export default function Home() {
           <Stat value={10000} suffix="+" label="Resumes Delivered" />
           <Stat value={80} suffix="+" label="ATS Score Assured" />
           <Stat value={899} label="Starting Price (₹)" />
-          <Stat value={49} suffix="/5★" label="Client Rating" />
+          <Stat value={4.9} suffix="/5★" label="Client Rating" />
           <Stat value={30} suffix="+" label="Countries Accepted" />
           <Stat value={20} suffix="+" label="Industries Covered" />
         </div>
