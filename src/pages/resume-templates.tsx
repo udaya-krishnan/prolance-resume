@@ -16,16 +16,16 @@ const templates = [
     tag: "IT & Tech",
     image: "/templates/resume2.jpeg",
   },
-//   {
-//     title: "Executive Format",
-//     tag: "Senior & Leadership",
-//     image: "/templates/template-3.jpg",
-//   },
-//   {
-//     title: "Clean Clinical",
-//     tag: "Healthcare & Nursing",
-//     image: "/templates/template-4.jpg",
-//   },
+  {
+    title: "Executive Format",
+    tag: "Senior & Leadership",
+    image: "/templates/resume4.jpeg",
+  },
+  {
+    title: "Clean Clinical",
+    tag: "Healthcare & Nursing",
+    image: "/templates/resume3.jpeg",
+  },
 ];
 
 const formats = [
