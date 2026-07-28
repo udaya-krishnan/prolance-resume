@@ -81,7 +81,14 @@ export default function Contact() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      service: formData.get("service"),
+      market: formData.get("market"),
+      message: formData.get("message"),
+    };
 
     try {
       const response = await fetch("/api/contact", {
