@@ -2,10 +2,6 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 
-// 1. Get a free access key at https://web3forms.com (no signup, just email verification)
-// 2. Paste it here — every form submission will be emailed straight to the inbox you registered.
-const WEB3FORMS_ACCESS_KEY = "1630ed52-7f38-4f71-9f1d-26ba08d9af86";
-
 const serviceOptions = [
   "ATS Resume Writing — Starter (₹899)",
   "ATS Resume Writing — Standard (₹1,299)",
@@ -85,17 +81,13 @@ export default function Contact() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-
-    // Web3Forms required/optional fields
-    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "New enquiry from Prolance Resume website");
-    formData.append("from_name", "Prolance Resume Website");
+    const payload = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
       const result = await response.json();
 
