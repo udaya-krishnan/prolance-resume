@@ -1,8 +1,32 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight, CheckCircle2, LayoutGrid, Layers, PenTool,
-  Globe2, ImageIcon, ShieldCheck,
+  Globe2, ImageIcon, ShieldCheck, Eye, X,
 } from "lucide-react";
+
+const templates = [
+  {
+    title: "Classic Professional",
+    tag: "Corporate & Finance",
+    image: "/templates/resume.jpeg",
+  },
+  {
+    title: "Modern Minimal",
+    tag: "IT & Tech",
+    image: "/templates/resume2.jpeg",
+  },
+//   {
+//     title: "Executive Format",
+//     tag: "Senior & Leadership",
+//     image: "/templates/template-3.jpg",
+//   },
+//   {
+//     title: "Clean Clinical",
+//     tag: "Healthcare & Nursing",
+//     image: "/templates/template-4.jpg",
+//   },
+];
 
 const formats = [
   {
@@ -66,6 +90,8 @@ const industries = [
 ];
 
 export default function ResumeTemplates() {
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
   return (
     <>
       {/* HERO */}
@@ -86,6 +112,83 @@ export default function ResumeTemplates() {
           </p>
         </div>
       </section>
+
+      {/* TEMPLATE GALLERY */}
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="reveal text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Real Examples</p>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">A Few of Our Resume Formats</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Real resumes we've written for real clients — tap any preview to see the full page.
+          </p>
+        </div>
+        <div className="mt-10 flex flex-wrap justify-center gap-6">
+          {templates.map((t) => (
+            <div
+              key={t.title}
+              className="reveal group relative flex w-full max-w-sm flex-none flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-[color:var(--brand)]/10 sm:w-72"
+            >
+              {/* Half-height cropped preview */}
+              <button
+                onClick={() => setPreviewImage(t.image)}
+                className="relative block h-64 w-full overflow-hidden"
+                aria-label={`Preview ${t.title}`}
+              >
+                <img
+                  src={t.image}
+                  alt={`${t.title} resume template preview`}
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+                {/* Fade-out to signal there's more below */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/70 to-transparent" />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-[color:var(--brand-ink)]/0 transition group-hover:bg-[color:var(--brand-ink)]/40">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[color:var(--brand-deep)] opacity-0 shadow-lg transition group-hover:opacity-100">
+                    <Eye className="h-3.5 w-3.5" /> Preview Full Resume
+                  </span>
+                </div>
+              </button>
+
+              <div className="flex flex-1 flex-col p-5">
+                <span className="w-fit rounded-full bg-secondary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-foreground/60">
+                  {t.tag}
+                </span>
+                <h3 className="mt-3 font-display text-base font-semibold">{t.title}</h3>
+                <button
+                  onClick={() => setPreviewImage(t.image)}
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--brand)]"
+                >
+                  Preview Full Resume <ArrowRight className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PREVIEW MODAL */}
+      {previewImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+          onClick={() => setPreviewImage(null)}
+        >
+          <div
+            className="relative max-h-[90vh] w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setPreviewImage(null)}
+              aria-label="Close preview"
+              className="absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-foreground shadow-lg transition hover:scale-105"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="max-h-[90vh] overflow-y-auto">
+              <img src={previewImage} alt="Full resume preview" className="w-full object-contain" />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* FORMATS */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
@@ -170,7 +273,7 @@ export default function ResumeTemplates() {
             <div className="absolute -inset-6 rounded-[2rem] gradient-brand opacity-15 blur-2xl" />
             <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
               <img
-                src="/resume.jpeg"
+                src="/resume-sample-ats.jpg"
                 alt="Sample ATS-optimised resume written by Prolance Resume"
                 className="w-full object-contain"
               />
