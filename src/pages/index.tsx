@@ -565,7 +565,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        {/* <div className="mt-10 flex flex-wrap justify-center gap-4"> */}
   {/* <a
     href="YOUR_GOOGLE_REVIEW_LINK"
     target="_blank"
