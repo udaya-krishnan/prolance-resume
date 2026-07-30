@@ -20,12 +20,12 @@ const services = [
     icon: Link2,
     title: "LinkedIn Profile Optimisation",
     price: "₹1,999 standalone / Up to 30% off with any resume package",
-    desc: "A complete LinkedIn makeover — headline, about section, skills, experience section, and keyword strategy designed to attract recruiter InMails and increase your profile visibility by up to 3x.",
+    desc: "A complete LinkedIn makeover covering your headline, about section, skills, experience section, and keyword strategy, designed to attract recruiter InMails and increase your profile visibility by up to 3x.",
     features: [
       "Keyword-optimised headline rewrite",
       "Compelling About / Summary section",
       "Experience section rewrites",
-      "Skills section — top 50 for your role",
+      "Skills section: top 50 for your role",
       "Custom banner design",
       "Profile SEO keyword audit",
       "Recommendations strategy",
@@ -43,7 +43,7 @@ const services = [
       "Role-specific, persuasive cover letter",
       "Written from scratch for your target company",
       "Tailored to the job description & company culture",
-      "Not a generic template — 100% custom",
+      "Not a generic template: 100% custom",
       "Word + PDF delivery",
     ],
   },
@@ -78,7 +78,7 @@ const services = [
     icon: Globe2,
     title: "International Resume",
     price: "From ₹1,699",
-    desc: "Country-specific resume formats for UK, USA, Canada, Australia, New Zealand, UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and all European markets — with the right format, keywords, and conventions.",
+    desc: "Country-specific resume formats for UK, USA, Canada, Australia, New Zealand, UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and all European markets, with the right format, keywords, and conventions.",
     features: [
       "Region-compliant content (no photo/DOB for US & UK)",
       "Europass-compatible for EU markets",
@@ -95,7 +95,7 @@ const industries = [
   "💻 IT & Software Development",
   "🏥 Healthcare & Nursing",
   "🏦 Finance & Banking",
-  "⚙️ Engineering — Civil, Mechanical, Electrical",
+  "⚙️ Engineering: Civil, Mechanical, Electrical",
   "📊 Marketing & Sales",
   "🛢️ Oil, Gas & Energy",
   "🏗️ Construction & Project Management",
@@ -130,7 +130,7 @@ export default function Services() {
             Complete Career <span className="text-gradient-brand">Document Services</span>.
           </h1>
           <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
-            ATS-Optimized · Human-Crafted. From your first resume to an international CV — we have a tailored
+            ATS-Optimized · Human-Crafted. From your first resume to an international CV, we have a tailored
             offering for every stage of your career, with ATS Score 80+ guaranteed on every resume.
           </p>
         </div>
@@ -186,7 +186,7 @@ export default function Services() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Industries</p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Resume Expertise Across Every Major Industry</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Our writers specialise in crafting ATS-optimised resumes for professionals across 20+ industries —
+            Our writers specialise in crafting ATS-optimised resumes for professionals across 20+ industries,
             using the exact language, keywords, and formats that recruiters in your field expect.
           </p>
         </div>
@@ -229,7 +229,7 @@ export default function Services() {
           <div className="absolute -right-10 -top-10 h-60 w-60 animate-blob rounded-full bg-[color:var(--brand-cyan)]/30 blur-2xl" />
           <h2 className="font-display text-3xl font-bold sm:text-4xl">Not sure which service you need?</h2>
           <p className="mt-3 max-w-xl text-white/80">
-            Message us on WhatsApp for a free consultation. Tell us your target role and market —
+            Message us on WhatsApp for a free consultation. Tell us your target role and market, and
             we'll recommend the right package for you instantly.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -239,7 +239,7 @@ export default function Services() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[color:var(--brand-deep)]"
             >
-              WhatsApp Us — Free Consultation <ArrowRight className="h-4 w-4" />
+              WhatsApp Us for a Free Consultation <ArrowRight className="h-4 w-4" />
             </a>
             <Link
               to="/pricing"

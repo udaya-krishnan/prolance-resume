@@ -25,7 +25,7 @@ const tiers = [
     price: "1,499",
     originalPrice: "2,000",
     savingLabel: "Save 25%",
-    desc: "Senior professionals — Most Popular",
+    desc: "Senior professionals",
     delivery: "48 Hours",
     popular: true,
   },
@@ -51,22 +51,22 @@ const featureDetails = [
   {
     icon: ShieldCheck,
     title: "Assured ATS Score 80+",
-    desc: "Your resume is tested against major ATS score checkers before delivery. If it scores below 80, we rewrite it at no charge — included in every package, every tier.",
+    desc: "Your resume is tested against major ATS score checkers before delivery. If it scores below 80, we rewrite it at no charge, included in every package, every tier.",
   },
   {
     icon: Clock,
     title: "30 Days Editing Support",
-    desc: "For 30 days after delivery, your resume remains a living document. Update a job title, add a certification, or tweak your skills — just message your writer on WhatsApp and we'll handle it, free of charge.",
+    desc: "For 30 days after delivery, your resume remains a living document. Update a job title, add a certification, or tweak your skills, just message your writer on WhatsApp and we'll handle it, free of charge.",
   },
   {
     icon: Sparkle,
     title: "Resume Customisation AI Prompts",
-    desc: "A Prolance exclusive included in Standard & Premium packages. A curated set of tested AI prompts that let you tailor your resume to any job description in minutes, using Claude, ChatGPT, or Gemini — without losing the quality of your original document.",
+    desc: "A Prolance exclusive included in Standard & Premium packages. A curated set of tested AI prompts that let you tailor your resume to any job description in minutes, using Claude, ChatGPT, or Gemini, without losing the quality of your original document.",
   },
   {
     icon: MessageSquareText,
     title: "Cover Letter (Standard & Premium)",
-    desc: "A role-specific, persuasive cover letter written from scratch for your target company and role — not a generic template, but a custom document tailored to the job description, company culture, and recruiter expectations.",
+    desc: "A role-specific, persuasive cover letter written from scratch for your target company and role: not a generic template, but a custom document tailored to the job description, company culture, and recruiter expectations.",
   },
   {
     icon: BookOpenCheck,
@@ -160,7 +160,7 @@ export default function Pricing() {
             Simple, <span className="text-gradient-brand">Experience-Based</span> Pricing.
           </h1>
           <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
-            No hidden charges. No upsells. Just results — with an assured ATS score of 80+ on every resume we deliver.
+            No hidden charges. No upsells. Just results, with an assured ATS score of 80+ on every resume we deliver.
           </p>
         </div>
       </section>
@@ -286,7 +286,7 @@ export default function Pricing() {
             <h3 className="mt-5 font-display text-xl font-semibold">LinkedIn Profile Optimisation</h3>
             <p className="mt-1 text-sm font-medium text-white/90">₹1,999 standalone · up to 30% off with any resume package</p>
             <p className="mt-4 text-sm text-white/80">
-              A complete profile makeover — headline, About section, experience rewrites, top-50 skills,
+              A complete profile makeover covering your headline, About section, experience rewrites, top-50 skills,
               custom banner, SEO keyword audit, and recommendations strategy. Delivered in 2–3 business days.
             </p>
             <Link
@@ -356,7 +356,7 @@ export default function Pricing() {
           <div className="absolute -right-10 -top-10 h-60 w-60 animate-blob rounded-full bg-[color:var(--brand-cyan)]/30 blur-2xl" />
           <h2 className="font-display text-3xl font-bold sm:text-4xl">Still not sure which plan fits?</h2>
           <p className="mt-3 max-w-xl text-white/80">
-            Message us on WhatsApp for a free consultation. Tell us your target role and market —
+            Message us on WhatsApp for a free consultation. Tell us your target role and market, and
             we'll recommend the right package instantly.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -366,7 +366,7 @@ export default function Pricing() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[color:var(--brand-deep)]"
             >
-              WhatsApp Us — Free Consultation <ArrowRight className="h-4 w-4" />
+              WhatsApp Us for a Free Consultation <ArrowRight className="h-4 w-4" />
             </a>
             <Link
               to="/contact"

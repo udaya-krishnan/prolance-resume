@@ -66,7 +66,7 @@ const services = [
   {
     icon: Link2,
     title: "LinkedIn Profile Optimisation",
-    desc: "A complete LinkedIn makeover — headline, about section, skills, experience, and keyword strategy designed to attract recruiter InMails and increase your profile visibility by up to 3x.",
+    desc: "A complete LinkedIn makeover covering your headline, about section, skills, experience, and keyword strategy, designed to attract recruiter InMails and increase your profile visibility by up to 3x.",
   },
   {
     icon: Briefcase,
@@ -84,7 +84,7 @@ const steps = [
   {
     icon: Target,
     title: "Start on WhatsApp",
-    desc: "Message us for a free consultation. Tell us your target role and market — we'll recommend the right package instantly.",
+    desc: "Message us for a free consultation. Tell us your target role and market, and we'll recommend the right package instantly.",
   },
   {
     icon: Zap,
@@ -112,7 +112,7 @@ const testimonials = [
   {
     name: "Alex P Abraham",
     meta: "Google Review · 5 months ago",
-    text: "They prepared my friend's resume with excellent professionalism — well-structured, impactful, and tailored perfectly, plus a fully optimised LinkedIn profile.",
+    text: "They prepared my friend's resume with excellent professionalism: well-structured, impactful, and tailored perfectly, plus a fully optimised LinkedIn profile.",
   },
   {
     name: "Praisey Vilayil",
@@ -122,12 +122,12 @@ const testimonials = [
   {
     name: "Jeena Unni",
     meta: "Google Review · 2 months ago",
-    text: "Highly recommend Prolance Resume for freshers and job seekers — their AI resume service gave me a clean, professional, attractive resume in no time.",
+    text: "Highly recommend Prolance Resume for freshers and job seekers. Their AI resume service gave me a clean, professional, attractive resume in no time.",
   },
   {
     name: "Uday",
     meta: "Google Review · 5 months ago",
-    text: "Purchased the standard package — perfect CV, cover letter, and motivation letter. I know I'll crack my interview with this resume.",
+    text: "Purchased the standard package. Perfect CV, cover letter, and motivation letter. I know I'll crack my interview with this resume.",
   },
   {
     name: "Jisvin George",
@@ -170,7 +170,7 @@ const pricing = [
     price: "1,499",
     originalPrice: "2,000",
     savingLabel: "Save 25%",
-    desc: "Senior professionals — Most Popular",
+    desc: "Senior professionals",
     popular: true,
     features: [
       "ATS-Optimised Resume",
@@ -205,7 +205,7 @@ const whyUs = [
   {
     icon: Target,
     title: "Resume Customisation AI Prompts",
-    desc: "Every package includes our exclusive AI Prompt set — tested prompts you can use with Claude, ChatGPT, and Gemini to tailor your resume for any job description.",
+    desc: "Every package includes our exclusive AI Prompt set: tested prompts you can use with Claude, ChatGPT, and Gemini to tailor your resume for any job description.",
   },
   {
     icon: Trophy,
@@ -215,7 +215,7 @@ const whyUs = [
   {
     icon: Users,
     title: "20+ Industry Specialists",
-    desc: "From IT and healthcare to finance, oil & gas, engineering, and education — dedicated writers who know exactly what recruiters want to see.",
+    desc: "From IT and healthcare to finance, oil & gas, engineering, and education, dedicated writers who know exactly what recruiters want to see.",
   },
 ];
 
@@ -254,7 +254,7 @@ export default function Home() {
             <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
               We Don't Just Write Resumes, We Brand You. ATS resumes, cover
               letters &amp; LinkedIn optimization with 1:1 consultation, 24-hour
-              delivery, and expert support — built for jobs in India, Gulf, UK,
+              delivery, and expert support for jobs in India, Gulf, UK,
               Canada, Australia, and Europe.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -565,6 +565,25 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+  {/* <a
+    href="YOUR_GOOGLE_REVIEW_LINK"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand)] px-6 py-3 font-semibold text-[color:var(--brand)] transition hover:bg-[color:var(--brand)] hover:text-white"
+  >
+    ⭐ View More Reviews
+  </a>
+
+  <a
+    href="YOUR_GOOGLE_REVIEW_LINK"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 font-semibold text-white transition hover:scale-[1.03]"
+  >
+    ✍️ Leave Your Review
+  </a>
+</div> */}
       </section>
 
       {/* PRICING */}
@@ -664,7 +683,7 @@ export default function Home() {
             50), SEO audit, banner design &amp; more.
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
-            100% Satisfaction Guarantee — we revise until you love it.
+            100% Satisfaction Guarantee. We revise until you love it.
           </p>
         </div>
       </section>
@@ -681,8 +700,8 @@ export default function Home() {
               </h2>
               <p className="mt-3 text-white/85">
                 Join thousands of professionals across India, Gulf, and the
-                world who landed their dream roles with Prolance Resume.
-                Starting at just ₹899 — with same-day delivery available.
+                world who landed their dream roles with Prolance Resume,
+                starting at just ₹899, with same-day delivery available.
               </p>
               <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/70">
                 <span>🔒 Secure &amp; Confidential</span>
@@ -698,7 +717,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[color:var(--brand-deep)] transition hover:scale-[1.04]"
               >
-                WhatsApp Us — Free Consultation{" "}
+                WhatsApp Us for a Free Consultation{" "}
                 <ArrowRight className="h-4 w-4" />
               </a>
               <Link

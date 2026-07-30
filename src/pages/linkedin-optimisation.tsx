@@ -6,13 +6,13 @@ import {
 
 const included = [
   { icon: PenLine, title: "Keyword-optimised headline rewrite", desc: "A headline built around the exact terms recruiters search for in your role and industry." },
-  { icon: Sparkle, title: "Compelling About / Summary section", desc: "A narrative that positions your experience, strengths, and career direction — not a resume copy-paste." },
+  { icon: Sparkle, title: "Compelling About / Summary section", desc: "A narrative that positions your experience, strengths, and career direction, not a resume copy-paste." },
   { icon: ListChecks, title: "Experience section rewrites", desc: "Achievement-led rewrites of every role, aligned with your resume and optimised for recruiter search." },
-  { icon: CheckCircle2, title: "Skills section — top 50 for your role", desc: "The 50 skills most likely to surface your profile in recruiter searches for your target roles." },
+  { icon: CheckCircle2, title: "Skills section: top 50 for your role", desc: "The 50 skills most likely to surface your profile in recruiter searches for your target roles." },
   { icon: Image, title: "Custom banner design", desc: "A professional banner image tailored to your industry and personal brand." },
   { icon: Search, title: "Profile SEO keyword audit", desc: "A full audit of your existing profile against the keywords recruiters in your field actually search." },
   { icon: Users, title: "Recommendations strategy", desc: "Guidance on who to ask, and what to ask for, to build credible, relevant recommendations." },
-  { icon: Eye, title: "Open-to-work visibility settings guide", desc: "How to configure visibility so the right recruiters see you — without alerting your current employer." },
+  { icon: Eye, title: "Open-to-work visibility settings guide", desc: "How to configure visibility so the right recruiters see you, without alerting your current employer." },
   { icon: MessageCircle, title: "WhatsApp support & revisions", desc: "Direct access to your writer for revisions until the profile feels right." },
 ];
 
@@ -36,8 +36,8 @@ export default function LinkedInOptimisation() {
               A Profile That Gets <span className="text-gradient-brand">Found</span>, Not Just Viewed.
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-              A complete LinkedIn makeover — headline, About section, skills, experience, and keyword strategy
-              designed to attract recruiter InMails and increase your profile visibility by up to 3x.
+              A complete LinkedIn makeover covering your headline, About section, skills, experience, and keyword
+              strategy, designed to attract recruiter InMails and increase your profile visibility by up to 3x.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -46,7 +46,7 @@ export default function LinkedInOptimisation() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-[color:var(--brand)]/30 transition hover:scale-[1.03]"
               >
-                WhatsApp Us — Free Consultation <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                WhatsApp Us for a Free Consultation <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </a>
               <Link
                 to="/pricing"
@@ -98,7 +98,7 @@ export default function LinkedInOptimisation() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">What's Included</p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">The Complete Makeover</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Every element of your profile that a recruiter sees, rewritten and optimised — not just a polish.
+            Every element of your profile that a recruiter sees, rewritten and optimised, not just a polish.
           </p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -126,13 +126,13 @@ export default function LinkedInOptimisation() {
             <div>
               <h3 className="font-display text-2xl font-bold sm:text-3xl">LinkedIn Profile Optimisation</h3>
               <p className="mt-3 text-white/85">
-                A full rewrite of your headline, About section, experience, skills, and banner — with a
+                A full rewrite of your headline, About section, experience, skills, and banner, with a
                 keyword strategy built for your target role and market.
               </p>
               <ul className="mt-5 space-y-2 text-sm text-white/80">
                 <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 flex-shrink-0" /> Delivery in 2–3 business days</li>
                 <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 flex-shrink-0" /> WhatsApp support & revisions included</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 flex-shrink-0" /> 100% satisfaction guarantee — we revise until you love it</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 flex-shrink-0" /> 100% satisfaction guarantee: we revise until you love it</li>
               </ul>
             </div>
             <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur">
@@ -166,7 +166,7 @@ export default function LinkedInOptimisation() {
         <div className="reveal rounded-2xl border border-border bg-white/60 p-8 text-center backdrop-blur">
           <p className="text-sm font-semibold text-[color:var(--brand)]">Not sure if you need LinkedIn, a resume, or both?</p>
           <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
-            Message us on WhatsApp — tell us your target role and market, and we'll recommend the right combination for you.
+            Message us on WhatsApp, tell us your target role and market, and we'll recommend the right combination for you.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
@@ -175,7 +175,7 @@ export default function LinkedInOptimisation() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/30 transition hover:scale-[1.03]"
             >
-              WhatsApp Us — Free Consultation <ArrowRight className="h-4 w-4" />
+              WhatsApp Us for a Free Consultation <ArrowRight className="h-4 w-4" />
             </a>
             <Link
               to="/contact"

@@ -40,28 +40,28 @@ const formats = [
     icon: Layers,
     title: "Skills-Based",
     tag: "For freshers & career changers",
-    desc: "Leads with a skills and projects summary before work experience, so relevant capability is visible immediately — built for graduates, career switchers, or anyone with limited formal experience.",
+    desc: "Leads with a skills and projects summary before work experience, so relevant capability is visible immediately, built for graduates, career switchers, or anyone with limited formal experience.",
     bestFor: "Freshers, graduates & career changers",
   },
   {
     icon: PenTool,
     title: "Combination Format",
     tag: "For leadership roles",
-    desc: "Blends a strong skills/achievements summary at the top with a detailed reverse-chronological history below — built for senior professionals whose career spans multiple functions or industries.",
+    desc: "Blends a strong skills/achievements summary at the top with a detailed reverse-chronological history below, built for senior professionals whose career spans multiple functions or industries.",
     bestFor: "Senior & leadership-track professionals",
   },
   {
     icon: ImageIcon,
     title: "Infographic Resume",
     tag: "Premium add-on",
-    desc: "A visually structured, one-page companion resume with icon-led sections and skill visualisations — designed to complement (never replace) your ATS-safe master resume for portfolio and networking use.",
+    desc: "A visually structured, one-page companion resume with icon-led sections and skill visualisations, designed to complement (never replace) your ATS-safe master resume for portfolio and networking use.",
     bestFor: "Design, creative & client-facing roles",
   },
   {
     icon: Globe2,
     title: "International & Gulf Formats",
     tag: "Region-specific",
-    desc: "Country-specific structure and conventions — no photo or date of birth for US & UK resumes, Europass-compatible formatting for EU markets, and Gulf-format CVs for UAE, Saudi Arabia, Qatar, Kuwait & Bahrain.",
+    desc: "Country-specific structure and conventions: no photo or date of birth for US & UK resumes, Europass-compatible formatting for EU markets, and Gulf-format CVs for UAE, Saudi Arabia, Qatar, Kuwait & Bahrain.",
     bestFor: "UK, USA, Canada, Australia, Europe & Gulf applicants",
   },
 ];
@@ -70,7 +70,7 @@ const industries = [
   "💻 IT & Software Development",
   "🏥 Healthcare & Nursing",
   "🏦 Finance & Banking",
-  "⚙️ Engineering — Civil, Mechanical, Electrical",
+  "⚙️ Engineering: Civil, Mechanical, Electrical",
   "📊 Marketing & Sales",
   "🛢️ Oil, Gas & Energy",
   "🏗️ Construction & Project Management",
@@ -107,7 +107,7 @@ export default function ResumeTemplates() {
             The Right <span className="text-gradient-brand">Format</span>, Not Just a Template.
           </h1>
           <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
-            We don't hand you a fixed template — every resume is built on the ATS-safe structure that best
+            We don't hand you a fixed template. Every resume is built on the ATS-safe structure that best
             fits your career stage, industry, and target market, then written from scratch around it.
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function ResumeTemplates() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Real Examples</p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">A Few of Our Resume Formats</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Real resumes we've written for real clients — tap any preview to see the full page.
+            Real resumes we've written for real clients. Tap any preview to see the full page.
           </p>
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-6">
@@ -221,7 +221,7 @@ export default function ResumeTemplates() {
             <h3 className="mt-4 font-display text-xl font-semibold">Every Format, ATS Score 80+ Guaranteed</h3>
             <p className="mt-3 text-sm text-white/75">
               Whichever structure fits your career, it's tested against major ATS score checkers before
-              delivery — Workday, Taleo, Greenhouse, and iCIMS. Below 80, we rewrite it at no charge.
+              delivery: Workday, Taleo, Greenhouse, and iCIMS. Below 80, we rewrite it at no charge.
             </p>
             <Link
               to="/pricing"
@@ -234,7 +234,7 @@ export default function ResumeTemplates() {
       </section>
 
       {/* SAMPLE LAYOUT PREVIEW */}
-      <section className="mx-auto max-w-7xl px-6 pb-16">
+      {/* <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="reveal">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">See It In Action</p>
@@ -244,12 +244,12 @@ export default function ResumeTemplates() {
             <p className="mt-4 text-muted-foreground">
               Every resume we write follows the same underlying discipline: a clear summary up top, skills
               grouped for fast scanning, achievement-led experience bullets, and education/languages kept
-              short and easy to parse. No tables, no text boxes, no graphics that confuse ATS parsers —
+              short and easy to parse. No tables, no text boxes, no graphics that confuse ATS parsers,
               just a structure that gets you past the filter and read by a human.
             </p>
             <ul className="mt-6 space-y-2.5 text-sm">
               {[
-                "Single-column layout — parses cleanly on every major ATS",
+                "Single-column layout that parses cleanly on every major ATS",
                 "Section headers ATS software recognises instantly",
                 "Achievement bullets, not duty lists",
                 "Skills grouped for fast recruiter scanning",
@@ -268,7 +268,7 @@ export default function ResumeTemplates() {
             </Link>
           </div>
 
-          {/* Real sample resume preview */}
+        
           <div className="reveal relative">
             <div className="absolute -inset-6 rounded-[2rem] gradient-brand opacity-15 blur-2xl" />
             <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
@@ -284,7 +284,7 @@ export default function ResumeTemplates() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* INDUSTRIES */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
@@ -292,7 +292,7 @@ export default function ResumeTemplates() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Industries</p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Formats Matched to 20+ Industries</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Format is only half the story — our writers pair the right structure with the exact language,
+            Format is only half the story. Our writers pair the right structure with the exact language,
             keywords, and conventions recruiters in your field expect.
           </p>
         </div>
@@ -317,7 +317,7 @@ export default function ResumeTemplates() {
             <div className="max-w-xl">
               <h2 className="font-display text-3xl font-bold sm:text-4xl">Not Sure Which Format Fits You?</h2>
               <p className="mt-3 text-white/85">
-                Message us your current role, experience, and target market — we'll tell you exactly which
+                Message us your current role, experience, and target market, and we'll tell you exactly which
                 format we'd write for you, free of charge.
               </p>
             </div>
@@ -328,7 +328,7 @@ export default function ResumeTemplates() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[color:var(--brand-deep)] transition hover:scale-[1.04]"
               >
-                WhatsApp Us — Free Consultation <ArrowRight className="h-4 w-4" />
+                WhatsApp Us for a Free Consultation <ArrowRight className="h-4 w-4" />
               </a>
               <Link
                 to="/pricing"

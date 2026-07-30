@@ -162,7 +162,7 @@ export function Footer() {
                 className="flex items-start gap-2 transition hover:text-white"
               >
                 <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                contact@prolanceresume.com
+                hello@prolanceresume.com
               </a>
             </li>
             <li className="flex items-start gap-2">
