@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight, CheckCircle2, LayoutGrid, Layers, PenTool,
-  Globe2, ImageIcon, ShieldCheck, Eye, X,
+  Globe2, ShieldCheck, Eye, X,
 } from "lucide-react";
 
 const templates = [
