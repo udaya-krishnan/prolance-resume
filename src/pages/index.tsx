@@ -248,7 +248,7 @@ export default function Home() {
               }}
             >
               <img
-                src="templates/resume5.jpeg"
+                src="templates/resume9.jpeg"
                 alt="Resume sample"
                 className="w-full object-cover object-top"
                 style={{ maxHeight: "380px" }}
