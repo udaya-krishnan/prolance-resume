@@ -5,29 +5,51 @@ import {
    FileText, Globe2, MessageSquareText, BookOpenCheck,
 } from "lucide-react";
 
-const tiers = [
+const pricing = [
   {
     name: "Starter",
     price: "899",
     desc: "Fresh graduates & early careers",
-    delivery: "24–48 Hours",
-    popular: false,
+    features: [
+      "ATS-Optimised Resume",
+      "Assured ATS Score 80+",
+      "30 Days Editing Support",
+      "Word + PDF Delivery",
+      "Delivery in 24–48 Hours",
+    ],
   },
   {
     name: "Standard",
     price: "1,299",
     desc: "Mid-career professionals",
-    delivery: "48 Hours",
-    popular: false,
+    features: [
+      "ATS-Optimised Resume",
+      "Assured ATS Score 80+",
+      "30 Days Editing Support",
+      "Word + PDF Delivery",
+      "Cover Letter",
+      "Resume Customisation Prompts",
+      "Delivery in 48 Hours",
+    ],
   },
   {
     name: "Premium",
     price: "1,499",
     originalPrice: "2,000",
     savingLabel: "Save 25%",
-    desc: "Senior professionals",
-    delivery: "48 Hours",
+    desc: "Senior professionals — Most Popular",
     popular: true,
+    features: [
+      "ATS-Optimised Resume",
+      "Assured ATS Score 80+",
+      "30 Days Editing Support",
+      "Word + PDF Delivery",
+      "Cover Letter",
+      "Resume Customisation Prompts",
+      "Interview Prep Prompt Guide",
+      "Provided in Any 2 Templates”",
+      "Delivery in 48 Hours",
+    ],
   },
 ];
 
@@ -39,7 +61,7 @@ const featureMatrix = [
   { label: "Cover Letter", starter: false, standard: true, premium: true },
   { label: "Resume Customisation AI Prompts", starter: false, standard: true, premium: true },
   { label: "Interview Prep Prompt Guide", starter: false, standard: false, premium: true },
-  { label: "Additional Infographic Resume", starter: false, standard: false, premium: true },
+  { label: "Provided in Any 2 Templates”", starter: false, standard: false, premium: true },
 ];
 
 const featureDetails = [
@@ -167,53 +189,63 @@ export default function Pricing() {
 
       {/* PRICING CARDS */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {tiers.map((p) => (
-            <div
-              key={p.name}
-              className={`reveal relative rounded-3xl border p-8 transition hover:-translate-y-1 ${
-                p.popular
-                  ? "border-transparent gradient-brand text-white shadow-2xl shadow-[color:var(--brand)]/30"
-                  : "border-border bg-white"
-              }`}
-            >
-              {p.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[color:var(--brand-deep)]">
-                  Most Popular
-                </span>
-              )}
-              <h3 className="font-display text-xl font-bold">{p.name}</h3>
-              <p className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>{p.desc}</p>
-              <div className="mt-6 flex items-end gap-1">
-                {p.originalPrice && (
-                  <span className={`pb-1 text-sm line-through ${p.popular ? "text-white/50" : "text-muted-foreground"}`}>
-                    ₹{p.originalPrice}
-                  </span>
-                )}
-                <span className="font-display text-4xl font-bold">₹{p.price}</span>
-                <span className={`pb-1 text-sm ${p.popular ? "text-white/70" : "text-muted-foreground"}`}>/ project</span>
-              </div>
-              {p.savingLabel && (
-                <span className="mt-1 inline-block rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold text-white">
-                  {p.savingLabel}
-                </span>
-              )}
-              <p className={`mt-3 text-xs font-medium ${p.popular ? "text-white/70" : "text-[color:var(--brand)]"}`}>
-                Delivery in {p.delivery}
-              </p>
-              <Link
-                to="/contact"
-                className={`mt-6 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition ${
-                  p.popular
-                    ? "bg-white text-[color:var(--brand-deep)] hover:scale-[1.02]"
-                    : "gradient-brand text-white hover:scale-[1.02]"
-                }`}
-              >
-                Get started
-              </Link>
-            </div>
-          ))}
-        </div>
+         <div className="mt-12 grid gap-6 lg:grid-cols-3">
+                  {pricing.map((p) => (
+                    <div
+                      key={p.name}
+                      className={`reveal relative rounded-3xl border p-8 transition hover:-translate-y-1 ${
+                        p.popular
+                          ? "border-transparent gradient-brand text-white shadow-2xl shadow-[color:var(--brand)]/30"
+                          : "border-border bg-white"
+                      }`}
+                    >
+                      {p.popular && (
+                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[color:var(--brand-deep)]">
+                          Most Popular
+                        </span>
+                      )}
+                      <h3 className="font-display text-xl font-bold">{p.name}</h3>
+                      <p className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>{p.desc}</p>
+                      <div className="mt-6 flex items-end gap-1">
+                        {p.originalPrice && (
+                          <span className={`pb-1 text-sm line-through ${p.popular ? "text-white/50" : "text-muted-foreground"}`}>
+                            ₹{p.originalPrice}
+                          </span>
+                        )}
+                        <span className="font-display text-4xl font-bold">₹{p.price}</span>
+                        <span className={`pb-1 text-sm ${p.popular ? "text-white/70" : "text-muted-foreground"}`}></span>
+                      </div>
+                      {p.savingLabel && (
+                        <span className="mt-1 inline-block rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold text-white">
+                          {p.savingLabel}
+                        </span>
+                      )}
+                      <ul className="mt-6 space-y-3">
+                        {p.features.map((f) => (
+                          <li key={f} className="flex items-start gap-2 text-sm">
+                            <CheckCircle2
+                              className={`mt-0.5 h-4 w-4 flex-shrink-0 ${p.popular ? "text-white" : "text-[color:var(--brand)]"}`}
+                            />
+                            {f}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className={`mt-4 text-xs ${p.popular ? "text-white/60" : "text-muted-foreground"}`}>
+                        Express Delivery (24 hrs): +₹300
+                      </p>
+                      <Link
+                        to="/contact"
+                        className={`mt-6 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition ${
+                          p.popular
+                            ? "bg-white text-[color:var(--brand-deep)] hover:scale-[1.02]"
+                            : "gradient-brand text-white hover:scale-[1.02]"
+                        }`}
+                      >
+                        Get started
+                      </Link>
+                    </div>
+                  ))}
+                </div>
 
         <div className="reveal mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
           <span className="flex items-center gap-1.5"><Zap className="h-3.5 w-3.5 text-[color:var(--brand)]" /> Express Delivery (24 Hours): +₹300</span>

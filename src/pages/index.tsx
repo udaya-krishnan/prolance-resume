@@ -1,56 +1,37 @@
 import { Link } from "react-router-dom";
 import {
-  ArrowRight,
-  CheckCircle2,
-  FileText,
-  Briefcase,
-  Star,
-  Users,
-  Trophy,
-  Quote,
-  ShieldCheck,
-  Zap,
-  Rocket,
-  Target,
-  Link2,
-  Sparkle,
+  ArrowRight, CheckCircle2, FileText, Briefcase,
+  Star, Users, Trophy, Quote, ShieldCheck, Zap,
+  Rocket, Target, Link2, Sparkle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { AnnouncementBar } from "../components/site/AnnouncementBar";
 
-function useCounter(target: number, ms = 1500, decimals = 0) {
+function useCounter(target: number, ms = 1500) {
   const [n, setN] = useState(0);
   useEffect(() => {
     let raf = 0;
     const start = performance.now();
-    const factor = Math.pow(10, decimals);
+    const isDecimal = !Number.isInteger(target);
     const tick = (t: number) => {
       const p = Math.min(1, (t - start) / ms);
-      setN(Math.round(p * target * factor) / factor);
+      const current = p * target;
+      setN(isDecimal ? Math.round(current * 10) / 10 : Math.floor(current));
       if (p < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [target, ms, decimals]);
+  }, [target, ms]);
   return n;
 }
 
-function Stat({
-  value,
-  suffix,
-  label,
-  decimals = 0,
-}: {
-  value: number;
-  suffix?: string;
-  label: string;
-  decimals?: number;
-}) {
-  const n = useCounter(value, 1500, decimals);
+function Stat({ value, suffix, label }: { value: number; suffix?: string; label: string }) {
+  const n = useCounter(value);
+  const isDecimal = !Number.isInteger(value);
   return (
     <div className="text-center">
       <div className="font-display text-4xl font-bold text-gradient-brand md:text-5xl">
-        {decimals > 0 ? n.toFixed(decimals) : n.toLocaleString()}
-        {suffix}
+        {isDecimal ? n.toFixed(1) : n.toLocaleString()}{suffix}
       </div>
       <div className="mt-1 text-sm text-muted-foreground">{label}</div>
     </div>
@@ -58,81 +39,64 @@ function Stat({
 }
 
 const services = [
-  {
-    icon: FileText,
-    title: "ATS-Friendly Resume Writing",
-    desc: "Professionally written, keyword-rich resumes optimised for ATS platforms and tailored to your target role, industry, and experience level. Available for India, Gulf, and international markets.",
-  },
-  {
-    icon: Link2,
-    title: "LinkedIn Profile Optimisation",
-    desc: "A complete LinkedIn makeover covering your headline, about section, skills, experience, and keyword strategy, designed to attract recruiter InMails and increase your profile visibility by up to 3x.",
-  },
-  {
-    icon: Briefcase,
-    title: "Cover Letter Writing",
-    desc: "Persuasive, role-specific cover letters that complement your resume and give recruiters a compelling reason to call you. Tailored to the company culture and job requirements.",
-  },
-  {
-    icon: Rocket,
-    title: "SOP Writing",
-    desc: "Admission-winning Statements of Purpose for universities in the UK, Canada, Australia, Germany, and Ireland. Personal narratives that connect your academic journey with your future aspirations.",
-  },
+  { icon: FileText, title: "ATS-Friendly Resume Writing", desc: "Professionally written, keyword-rich resumes optimised for ATS platforms and tailored to your target role, industry, and experience level. Available for India, Gulf, and international markets." },
+  { icon: Link2, title: "LinkedIn Profile Optimisation", desc: "A complete LinkedIn makeover including headline, about section, skills, experience, and keyword strategy designed to attract recruiter InMails and increase your profile visibility by up to 3x." },
+  { icon: Briefcase, title: "Cover Letter Writing", desc: "Persuasive, role-specific cover letters that complement your resume and give recruiters a compelling reason to call you. Tailored to the company culture and job requirements." },
+  { icon: Rocket, title: "SOP Writing", desc: "Admission-winning Statements of Purpose for universities in the UK, Canada, Australia, Germany, and Ireland. Personal narratives that connect your academic journey with your future aspirations." },
 ];
 
 const steps = [
-  {
-    icon: Target,
-    title: "Start on WhatsApp",
-    desc: "Message us for a free consultation. Tell us your target role and market, and we'll recommend the right package instantly.",
-  },
-  {
-    icon: Zap,
-    title: "Pick Your Plan",
-    desc: "Choose from our Starter, Standard, and Premium plans based on your career stage and needs.",
-  },
-  {
-    icon: Sparkle,
-    title: "Share Your Details",
-    desc: "Fill out our short career brief or share your existing resume. Your assigned writer crafts a tailored, ATS-optimised document.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Get Your Resume",
-    desc: "Receive your professionally written resume within 24–48 hours. Includes 30 days of editing support and exclusive AI Guides with Premium.",
-  },
+  { icon: Target, title: "Start on WhatsApp", desc: "Message us for a free consultation. Tell us your target role and market, and we will recommend the right package instantly." },
+  { icon: Zap, title: "Pick Your Plan", desc: "Choose from our Starter, Standard, and Premium plans based on your career stage and needs." },
+  { icon: Sparkle, title: "Share Your Details", desc: "Fill out our short career brief or share your existing resume. Your assigned writer crafts a tailored, ATS-optimised document." },
+  { icon: ShieldCheck, title: "Get Your Resume", desc: "Receive your professionally written resume within 24 to 48 hours. Includes 30 days of editing support and exclusive AI Guides with Premium." },
 ];
 
 const testimonials = [
   {
+    name: "Akhil John K.Y",
+    role: "Google Review · 6 weeks ago",
+    text: "I had a great experience with Prolance Resume. Their team was professional, responsive, and understood my career goals well. They delivered a well-structured, ATS-optimized resume that highlighted my skills and experience effectively. The quality of work and attention to detail exceeded my expectations. I would definitely recommend Prolance Resume to anyone seeking a polished and impactful resume.",
+  },
+  {
     name: "Arya Ajith",
-    meta: "Google Review · 2 months ago",
-    text: "Afsal handled my CV and cover letter professionally, sharing a draft first and making sure everything matched exactly what I needed.",
+    role: "Google Review · 10 weeks ago",
+    text: "I recently used Prolance for my CV and cover letter, and I had a great experience. An employee named Afsal handled my work professionally and made everything exactly according to my requirements. They shared a draft first and made sure I was satisfied with every detail and correction before finalizing it. The final CV and cover letter looked very professional, and I received everything within just 2 days. I highly recommend Prolance to anyone looking for quality CV and cover letter services.",
   },
   {
-    name: "Alex P Abraham",
-    meta: "Google Review · 5 months ago",
-    text: "They prepared my friend's resume with excellent professionalism: well-structured, impactful, and tailored perfectly, plus a fully optimised LinkedIn profile.",
+    name: "Arun Kumar",
+    role: "Google Review · 11 weeks ago",
+    text: "Highly recommended! Very well-organized, professional, and customer-friendly service. The team was supportive, responsive, and ensured a smooth experience from start to finish. Truly appreciate their excellent service and attention to detail. Wishing the team continued success.",
   },
   {
-    name: "Praisey Vilayil",
-    meta: "Google Review · a month ago",
-    text: "Afsal understood my profile, gave great suggestions, and made my CV look clean and professional. Very helpful and quick.",
+    name: "Deekshit Shetty",
+    role: "Google Review · 23 weeks ago",
+    text: "I had a great experience with this CV building service. They are very professional and understood my experience clearly, helped me to restructure my CV in a more professional and ATS-friendly format. The final version looks much more polished and confident. I would definitely recommend them to anyone looking to improve their resume.",
   },
   {
-    name: "Jeena Unni",
-    meta: "Google Review · 2 months ago",
-    text: "Highly recommend Prolance Resume for freshers and job seekers. Their AI resume service gave me a clean, professional, attractive resume in no time.",
+    name: "Anu",
+    role: "Google Review · 32 weeks ago",
+    text: "I had a really good experience with their resume service. They were very patient, understood my requirements clearly, and customized the resume according to my profile. The final resume looked professional, well structured, and confident. I'm genuinely satisfied with their work and would definitely recommend them to anyone looking for a well made resume.",
   },
   {
-    name: "Uday",
-    meta: "Google Review · 5 months ago",
-    text: "Purchased the standard package. Perfect CV, cover letter, and motivation letter. I know I'll crack my interview with this resume.",
+    name: "Mohamed Nishad",
+    role: "Google Review · 34 weeks ago",
+    text: "Absolutely fantastic! Made creating a professional resume quick and easy. The templates look great, and I love the final result. Highly recommend it!",
   },
   {
     name: "Jisvin George",
-    meta: "Google Review · 7 months ago",
-    text: "Quick, professional, and very supportive throughout the process. Truly appreciate their effort and attention to detail.",
+    role: "Google Review · 34 weeks ago",
+    text: "Had a great experience getting my resume done by them. They were quick, professional, and very supportive throughout the process. Truly appreciate their effort and attention to detail. Thank you for the excellent service!",
+  },
+  {
+    name: "Kajal Kadam",
+    role: "Google Review · 39 weeks ago",
+    text: "I had a great experience with Prolance Resume. They completely transformed my resume, making it more professional and ATS-friendly. The team understood my background well and highlighted my skills perfectly. Highly recommend!!",
+  },
+  {
+    name: "Aarav Mehta",
+    role: "Google Review · 41 weeks ago",
+    text: "Three interview calls in the first week after the new resume went live. The ROI was unreal.",
   },
 ];
 
@@ -148,7 +112,7 @@ const pricing = [
       "Assured ATS Score 80+",
       "30 Days Editing Support",
       "Word + PDF Delivery",
-      "Delivery in 24–48 Hours",
+      "Delivery in 24 to 48 Hours",
     ],
   },
   {
@@ -170,7 +134,7 @@ const pricing = [
     price: "1,499",
     originalPrice: "2,000",
     savingLabel: "Save 25%",
-    desc: "Senior professionals",
+    desc: "Senior professionals (Most Popular)",
     popular: true,
     features: [
       "ATS-Optimised Resume",
@@ -180,43 +144,19 @@ const pricing = [
       "Cover Letter",
       "Resume Customisation Prompts",
       "Interview Prep Prompt Guide",
-      "Additional Infographic Resume",
+      "Provided in Any 2 Templates",
       "Delivery in 48 Hours",
     ],
   },
 ];
 
 const whyUs = [
-  {
-    icon: Zap,
-    title: "24–48 Hour Delivery",
-    desc: "Need your resume urgently? Same-day delivery available for priority orders. All standard orders delivered within 24–48 hours in Word and PDF formats.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "ATS Score 80+ Guaranteed",
-    desc: "Every resume we deliver is tested to achieve a minimum ATS score of 80+, verified against Workday, Taleo, Greenhouse, and iCIMS.",
-  },
-  {
-    icon: Sparkle,
-    title: "30 Days Editing Support",
-    desc: "Your career doesn't stop after delivery. We provide 30 days of free editing support after you receive your resume.",
-  },
-  {
-    icon: Target,
-    title: "Resume Customisation AI Prompts",
-    desc: "Every package includes our exclusive AI Prompt set: tested prompts you can use with Claude, ChatGPT, and Gemini to tailor your resume for any job description.",
-  },
-  {
-    icon: Trophy,
-    title: "98% Interview Callback Rate",
-    desc: "Our clients consistently report interview calls within 1–2 weeks. We track outcomes and continuously refine our writing process based on real hiring data.",
-  },
-  {
-    icon: Users,
-    title: "20+ Industry Specialists",
-    desc: "From IT and healthcare to finance, oil & gas, engineering, and education, dedicated writers who know exactly what recruiters want to see.",
-  },
+  { icon: Zap, title: "24 to 48 Hour Delivery", desc: "Need your resume urgently? Same-day delivery available for priority orders. All standard orders delivered within 24 to 48 hours in Word and PDF formats." },
+  { icon: ShieldCheck, title: "ATS Score 80+ Guaranteed", desc: "Every resume we deliver is tested to achieve a minimum ATS score of 80+." },
+  { icon: Sparkle, title: "30 Days Editing Support", desc: "Your career doesn't stop after delivery. We provide 30 days of free editing support after you receive your resume." },
+  { icon: Target, title: "Resume Customisation AI Prompts", desc: "Every package includes our exclusive AI Prompt set, which includes tested prompts you can use with Claude, ChatGPT, and Gemini to tailor your resume for any job description." },
+  { icon: Trophy, title: "98% Interview Callback Rate", desc: "Our clients consistently report interview calls within 1 to 2 weeks. We track outcomes and continuously refine our writing process based on real hiring data." },
+  { icon: Users, title: "20+ Industry Specialists", desc: "From IT and healthcare to finance, oil & gas, engineering, and education, we have dedicated writers who know exactly what recruiters want to see." },
 ];
 
 const resumeMistakes = [
@@ -247,14 +187,11 @@ export default function Home() {
               India's Leading ATS Resume Writing Service
             </span>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl xl:text-7xl">
-              Your Resume Should{" "}
-              <span className="text-gradient-brand">Open Doors</span>, Not Get
-              Filtered Out.
+              Your Resume Should <span className="text-gradient-brand">Open Doors</span>, Not Get Filtered Out.
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-              We Don't Just Write Resumes, We Brand You. ATS resumes, cover
-              letters &amp; LinkedIn optimization with 1:1 consultation, 24-hour
-              delivery, and expert support for jobs in India, Gulf, UK,
+              We Don't Just Write Resumes, We Brand You. ATS resumes, cover letters, and LinkedIn optimization
+              with 1:1 consultation, 24-hour delivery, and expert support, built for jobs in India, Gulf, UK,
               Canada, Australia, and Europe.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -262,8 +199,7 @@ export default function Home() {
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-[color:var(--brand)]/30 transition hover:scale-[1.03]"
               >
-                Get My Resume Now{" "}
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                Get My Resume Now <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/pricing"
@@ -293,76 +229,101 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Visual mock */}
-          <div className="reveal relative">
+          {/* ── ATS Resume Image Visual ── */}
+          <div className="reveal relative flex items-center justify-center py-8">
+
+            {/* Background glow */}
             <div className="absolute -inset-6 rounded-[2rem] gradient-brand opacity-20 blur-2xl" />
-            <div className="relative animate-float rounded-3xl glass p-6 shadow-2xl">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+
+            {/* ── Floating badge: ATS Score top left ── */}
+            <div className="absolute -left-4 top-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-1s] sm:flex">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-[9px] font-bold text-white shadow-sm">
+                90+
+              </span>
+              <div>
+                <div className="text-[11px] font-bold text-foreground">ATS Score 90+</div>
+                <div className="text-[9px] text-muted-foreground">Guaranteed on every resume</div>
+              </div>
+            </div>
+
+            {/* ── Floating badge: Interview Rate bottom left ── */}
+            <div className="absolute -left-4 bottom-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-4s] sm:flex">
+              <Trophy className="h-5 w-5 shrink-0 text-[color:var(--brand)]" />
+              <div>
+                <div className="text-[11px] font-bold text-foreground">98% Interview</div>
+                <div className="text-[9px] text-muted-foreground">Callback Rate</div>
+              </div>
+            </div>
+
+            {/* ── Floating badge: Resumes delivered top right ── */}
+            <div className="absolute -right-4 top-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-6s] sm:flex">
+              <Users className="h-5 w-5 shrink-0 text-[color:var(--brand)]" />
+              <div>
+                <div className="text-[11px] font-bold text-foreground">10,000+</div>
+                <div className="text-[9px] text-muted-foreground">Resumes delivered</div>
+              </div>
+            </div>
+
+            {/* ── Floating badge: 30 Days Support bottom right ── */}
+            <div className="absolute -right-4 bottom-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-3s] sm:flex">
+              <ShieldCheck className="h-5 w-5 shrink-0 text-green-500" />
+              <div>
+                <div className="text-[11px] font-bold text-foreground">30 Days</div>
+                <div className="text-[9px] text-muted-foreground">Free editing support</div>
+              </div>
+            </div>
+
+            {/* ── Resume image card ── */}
+            <div className="relative w-full max-w-sm animate-float overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-border/60 lg:max-w-md">
+
+              {/* Window chrome bar */}
+              <div className="flex items-center gap-2 border-b border-border bg-gray-50 px-4 py-2.5">
                 <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
                 <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
                 <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
-                <div className="ml-3 text-xs text-muted-foreground">
-                  resume_aarav_mehta.pdf
+                <span className="ml-2 flex-1 text-[11px] text-muted-foreground">resume_prolance.pdf</span>
+                <div className="rounded-full gradient-brand px-2.5 py-0.5 text-[10px] font-bold text-white">
+                  ATS / 94%
                 </div>
               </div>
-              <div className="mt-4 space-y-3">
-                <div className="flex items-end justify-between">
-                  <div>
-                    <div className="font-display text-2xl font-bold">
-                      Aarav Mehta
+
+              {/* Actual resume image */}
+              <div className="relative">
+                <img
+                  src="/templates/resume5.jpeg"
+                  alt="ATS-optimised resume sample by Prolance Resume"
+                  className="w-full object-cover object-top"
+                  style={{ maxHeight: "480px" }}
+                />
+
+                {/* Gradient fade at bottom so it fades out cleanly */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+
+                {/* ATS score overlay strip at the bottom */}
+                <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
+                  <div className="rounded-xl border border-border bg-white/95 px-3 py-2.5 shadow-lg backdrop-blur">
+                    <div className="mb-1.5 flex items-center justify-between">
+                      <span className="text-[10px] font-semibold text-muted-foreground">ATS Compatibility Score</span>
+                      <span className="text-[10px] font-bold text-green-600">94 / 100</span>
                     </div>
-                    <div className="text-sm text-[color:var(--brand)]">
-                      Senior Product Manager
+                    <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-[color:var(--brand)] to-green-400"
+                        style={{ width: "94%" }}
+                      />
+                    </div>
+                    <div className="mt-1.5 flex items-center gap-1">
+                      <ShieldCheck className="h-3 w-3 text-green-500" />
+                      <span className="text-[9px] text-muted-foreground">
+                        Passes Workday, Taleo, Greenhouse, and iCIMS
+                      </span>
                     </div>
                   </div>
-                  <div className="rounded-full gradient-brand px-3 py-1 text-[10px] font-bold text-white">
-                    ATS · 98%
-                  </div>
-                </div>
-                <div className="h-1 w-full rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] via-[color:var(--brand)] to-[color:var(--brand-cyan)]" />
-                <div className="grid gap-2">
-                  {[
-                    "Led 0→1 launch reaching 1M users in 6 months",
-                    "Drove 38% revenue growth via experimentation",
-                    "Built & mentored team of 9 PMs across 3 geos",
-                  ].map((l) => (
-                    <div
-                      key={l}
-                      className="flex items-start gap-2 text-xs text-foreground/80"
-                    >
-                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-[color:var(--brand)]" />
-                      {l}
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {[
-                    "Strategy",
-                    "Roadmapping",
-                    "SQL",
-                    "A/B Testing",
-                    "Figma",
-                    "Jira",
-                  ].map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium"
-                    >
-                      {t}
-                    </span>
-                  ))}
                 </div>
               </div>
-            </div>
-            <div className="absolute -left-4 top-1/4 hidden animate-float rounded-2xl glass px-3 py-2 text-xs font-medium shadow-lg [animation-delay:-2s] sm:block">
-              <Trophy className="mr-1 inline h-3.5 w-3.5 text-[color:var(--brand)]" />{" "}
-              98% interview callback rate
-            </div>
-            <div className="absolute -right-4 bottom-1/4 hidden animate-float rounded-2xl glass px-3 py-2 text-xs font-medium shadow-lg [animation-delay:-5s] sm:block">
-              <Users className="mr-1 inline h-3.5 w-3.5 text-[color:var(--brand)]" />{" "}
-              10,000+ resumes delivered
             </div>
           </div>
+
         </div>
 
         {/* Marquee */}
@@ -383,7 +344,7 @@ export default function Home() {
           <Stat value={10000} suffix="+" label="Resumes Delivered" />
           <Stat value={80} suffix="+" label="ATS Score Assured" />
           <Stat value={899} label="Starting Price (₹)" />
-          <Stat value={4.9} decimals={1} suffix="/5★" label="Client Rating" />
+          <Stat value={4.9} suffix="/5★" label="Client Rating" />
           <Stat value={30} suffix="+" label="Countries Accepted" />
           <Stat value={20} suffix="+" label="Industries Covered" />
         </div>
@@ -393,24 +354,16 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 py-10">
         <div className="reveal rounded-3xl border border-border bg-white/60 p-10 backdrop-blur">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">
-              Common Problems
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
-              Are You Making These Resume Mistakes?
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Common Problems</p>
+            <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Are You Making These Resume Mistakes?</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Most professionals don't realise their resume is being rejected
-              automatically before any recruiter sees it. Our expert writers fix
-              all of this and deliver a job-winning resume within 24 hours*.
+              Most professionals don't realise their resume is being rejected automatically before any recruiter sees it.
+              Our expert writers fix all of this and deliver a job-winning resume within 24 hours*.
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {resumeMistakes.map((m) => (
-              <div
-                key={m}
-                className="flex items-start gap-2 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700"
-              >
+              <div key={m} className="flex items-start gap-2 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700">
                 <span className="mt-0.5 text-red-400">✗</span>
                 {m}
               </div>
@@ -422,15 +375,10 @@ export default function Home() {
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="reveal text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">
-            What We Do
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">
-            Complete Career Document Services
-          </h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">What We Do</p>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Complete Career Document Services</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            A complete career toolkit, crafted by senior writers and
-            ex-recruiters with deep industry knowledge.
+            A complete career toolkit, crafted by senior writers and ex-recruiters with deep industry knowledge.
           </p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -443,9 +391,7 @@ export default function Home() {
               <div className="grid h-12 w-12 place-items-center rounded-xl gradient-brand text-white shadow-lg shadow-[color:var(--brand)]/30">
                 <s.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold">
-                {s.title}
-              </h3>
+              <h3 className="mt-5 font-display text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
               <Link
                 to="/services"
@@ -461,16 +407,11 @@ export default function Home() {
       {/* WHY PROLANCE */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="reveal text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">
-            Why Choose Us
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">
-            Why Prolance Resume
-          </h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Why Choose Us</p>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Why Prolance Resume</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            ATS-Optimized · Human-Crafted. Every resume is written by an
-            experienced career professional then rigorously tested for ATS
-            compatibility before delivery.
+            ATS-Optimized, Human-Crafted. Every resume is written by an experienced career professional
+            and then rigorously tested for ATS compatibility before delivery.
           </p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -483,9 +424,7 @@ export default function Home() {
               <div className="grid h-12 w-12 place-items-center rounded-xl gradient-brand text-white shadow-lg shadow-[color:var(--brand)]/30">
                 <w.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold">
-                {w.title}
-              </h3>
+              <h3 className="mt-5 font-display text-lg font-semibold">{w.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{w.desc}</p>
             </div>
           ))}
@@ -500,12 +439,8 @@ export default function Home() {
         </div>
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="reveal text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
-              How It Works
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">
-              Your Resume, Ready in 4 Steps
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">How It Works</p>
+            <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Your Resume, Ready in 4 Steps</h2>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-4">
             {steps.map((s, i) => (
@@ -517,9 +452,7 @@ export default function Home() {
                   0{i + 1}
                 </div>
                 <s.icon className="h-7 w-7 text-[color:var(--brand-cyan)]" />
-                <h3 className="mt-4 font-display text-lg font-semibold">
-                  {s.title}
-                </h3>
+                <h3 className="mt-4 font-display text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-white/70">{s.desc}</p>
               </div>
             ))}
@@ -530,74 +463,93 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="reveal text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">
-            Stories
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">
-            Real Results from Real Clients
-          </h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Real Reviews</p>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Real Results from Real Clients</h2>
+          {/* Google Reviews badge */}
+          <div className="mt-5 inline-flex items-center gap-3 rounded-2xl border border-border bg-white px-5 py-3 shadow-sm">
+            {/* Google G icon */}
+            <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            <div className="text-left">
+              <div className="flex items-center gap-1.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                ))}
+                <span className="ml-1 text-sm font-bold text-foreground">4.9</span>
+              </div>
+              <div className="text-[11px] text-muted-foreground">Verified Google Reviews</div>
+            </div>
+          </div>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="reveal relative rounded-2xl border border-border bg-white p-7 transition hover:shadow-xl"
+              className="reveal relative flex flex-col rounded-2xl border border-border bg-white p-6 transition hover:shadow-xl"
             >
-              <Quote className="absolute right-6 top-6 h-8 w-8 text-[color:var(--brand)]/15" />
+              {/* Google G top-right */}
+              <svg className="absolute right-5 top-5 h-4 w-4 shrink-0 opacity-40" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+
+              {/* Stars */}
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                  />
+                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="mt-4 text-foreground/80">"{t.text}"</p>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="grid h-11 w-11 place-items-center rounded-full gradient-brand font-bold text-white">
+
+              {/* Review text */}
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-foreground/80">"{t.text}"</p>
+
+              {/* Reviewer */}
+              <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full gradient-brand text-sm font-bold text-white">
                   {t.name[0]}
                 </div>
                 <div>
-                  <div className="font-semibold">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.meta}</div>
+                  <div className="text-sm font-semibold text-foreground">{t.name}</div>
+                  <div className="text-[11px] text-muted-foreground">{t.role}</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        {/* <div className="mt-10 flex flex-wrap justify-center gap-4"> */}
-  {/* <a
-    href="YOUR_GOOGLE_REVIEW_LINK"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand)] px-6 py-3 font-semibold text-[color:var(--brand)] transition hover:bg-[color:var(--brand)] hover:text-white"
-  >
-    ⭐ View More Reviews
-  </a>
 
-  <a
-    href="YOUR_GOOGLE_REVIEW_LINK"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 font-semibold text-white transition hover:scale-[1.03]"
-  >
-    ✍️ Leave Your Review
-  </a>
-</div> */}
+        {/* Google Reviews CTA */}
+        <div className="reveal mt-8 text-center">
+          <a
+            href="https://g.co/kgs/prolanceresume"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-foreground/70 shadow-sm transition hover:shadow-md"
+          >
+            <svg className="h-4 w-4" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            See all reviews on Google
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </section>
 
       {/* PRICING */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="reveal text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">
-            Pricing
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">
-            Simple, Experience-Based Pricing
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            No hidden charges. No upsells. Just results.
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Pricing</p>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Simple, Experience-Based Pricing</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">No hidden charges. No upsells. Just results.</p>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {pricing.map((p) => (
@@ -615,27 +567,15 @@ export default function Home() {
                 </span>
               )}
               <h3 className="font-display text-xl font-bold">{p.name}</h3>
-              <p
-                className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}
-              >
-                {p.desc}
-              </p>
+              <p className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>{p.desc}</p>
               <div className="mt-6 flex items-end gap-1">
                 {p.originalPrice && (
-                  <span
-                    className={`pb-1 text-sm line-through ${p.popular ? "text-white/50" : "text-muted-foreground"}`}
-                  >
+                  <span className={`pb-1 text-sm line-through ${p.popular ? "text-white/50" : "text-muted-foreground"}`}>
                     ₹{p.originalPrice}
                   </span>
                 )}
-                <span className="font-display text-4xl font-bold">
-                  ₹{p.price}
-                </span>
-                <span
-                  className={`pb-1 text-sm ${p.popular ? "text-white/70" : "text-muted-foreground"}`}
-                >
-                  / project
-                </span>
+                <span className="font-display text-4xl font-bold">₹{p.price}</span>
+                <span className={`pb-1 text-sm ${p.popular ? "text-white/70" : "text-muted-foreground"}`}></span>
               </div>
               {p.savingLabel && (
                 <span className="mt-1 inline-block rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold text-white">
@@ -652,9 +592,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <p
-                className={`mt-4 text-xs ${p.popular ? "text-white/60" : "text-muted-foreground"}`}
-              >
+              <p className={`mt-4 text-xs ${p.popular ? "text-white/60" : "text-muted-foreground"}`}>
                 Express Delivery (24 hrs): +₹300
               </p>
               <Link
@@ -673,19 +611,14 @@ export default function Home() {
 
         {/* LinkedIn add-on note */}
         <div className="reveal mt-8 rounded-2xl border border-border bg-white/60 p-6 text-center backdrop-blur">
-          <p className="text-sm font-semibold text-[color:var(--brand)]">
-            LinkedIn Profile Optimisation
-          </p>
+          <p className="text-sm font-semibold text-[color:var(--brand)]">LinkedIn Profile Optimisation</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Available as a standalone service at <strong>₹1,999</strong>, or add
-            to any resume package for up to <strong>30% off</strong>. Includes
-            headline rewrite, About section, experience rewrites, skills (top
-            50), SEO audit, banner design &amp; more.
+            Available as a standalone service at <strong>₹1,999</strong>, or add to any resume package for up to <strong>30% off</strong>.
+            Includes headline rewrite, About section, experience rewrites, skills (top 50), SEO audit, banner design &amp; more.
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            100% Satisfaction Guarantee. We revise until you love it.
-          </p>
+          <p className="mt-2 text-xs text-muted-foreground">100% Satisfaction Guarantee, we revise until you love it.</p>
         </div>
+        <AnnouncementBar/>
       </section>
 
       {/* CTA */}
@@ -695,13 +628,10 @@ export default function Home() {
           <div className="absolute -bottom-10 -left-10 h-60 w-60 rounded-full bg-white/10 blur-2xl" />
           <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div className="max-w-xl">
-              <h2 className="font-display text-3xl font-bold sm:text-4xl">
-                Ready to Get Shortlisted?
-              </h2>
+              <h2 className="font-display text-3xl font-bold sm:text-4xl">Ready to Get Shortlisted?</h2>
               <p className="mt-3 text-white/85">
-                Join thousands of professionals across India, Gulf, and the
-                world who landed their dream roles with Prolance Resume,
-                starting at just ₹899, with same-day delivery available.
+                Join thousands of professionals across India, Gulf, and the world who landed their dream roles
+                with Prolance Resume. Starting at just ₹899, with same-day delivery available.
               </p>
               <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/70">
                 <span>🔒 Secure &amp; Confidential</span>
@@ -717,8 +647,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[color:var(--brand-deep)] transition hover:scale-[1.04]"
               >
-                WhatsApp Us for a Free Consultation{" "}
-                <ArrowRight className="h-4 w-4" />
+                WhatsApp Us, Free Consultation <ArrowRight className="h-4 w-4" />
               </a>
               <Link
                 to="/pricing"

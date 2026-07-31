@@ -128,7 +128,7 @@ export default function Contact() {
             Start with a <span className="text-gradient-brand">Free Consultation</span>.
           </h1>
           <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Tell us your target role and market — we'll recommend the right package instantly.
+            Tell us your target role and market - we'll recommend the right package instantly.
             Message us on WhatsApp for the fastest response.
           </p>
           {/* Trust bar */}
@@ -206,7 +206,7 @@ export default function Contact() {
               <h3 className="font-display text-xl font-bold">Fastest way to reach us</h3>
               <p className="mt-2 text-sm text-white/85">
                 Message us on WhatsApp for an instant free consultation. Tell us your target role and market
-                — we'll recommend the right package right away.
+                - we'll recommend the right package right away.
               </p>
               <a
                 href="https://wa.me/916360817439?text=Hi%20Prolance%20Resume!%20I%20am%20interested%20in%20your%20resume%20writing%20services.%20Can%20you%20recommend%20the%20right%20package%20for%20me%3F"
@@ -215,7 +215,7 @@ export default function Contact() {
                 className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[color:var(--brand-deep)] transition hover:scale-[1.02]"
               >
                 <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                WhatsApp Us — Free Consultation
+                WhatsApp Us - Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </a>
               <ul className="mt-5 space-y-2.5 text-sm text-white/80">

@@ -107,7 +107,7 @@ export default function Faq() {
           </h1>
           <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
             Everything you need to know about pricing, delivery, and how Prolance Resume works.
-            Can't find your answer? Message us on WhatsApp — we respond within the hour.
+            Can't find your answer? Message us on WhatsApp - we respond within the hour.
           </p>
         </div>
       </section>

@@ -26,19 +26,34 @@ const templates = [
     tag: "Healthcare & Nursing",
     image: "/templates/resume3.jpeg",
   },
+  {
+    title: "Hospitality & Culinary",
+    tag: "Culinary & Hotel Operations",
+    image: "/templates/resume7.jpeg",
+  },
+  {
+    title: "Offshore Engineering",
+    tag: "Engineering & Energy",
+    image: "/templates/resume6.jpeg",
+  },
+  {
+    title: "Modern Two Column",
+    tag: "Education & Aviation",
+    image: "/templates/resume5.jpeg",
+  },
 ];
 
 const formats = [
   {
     icon: LayoutGrid,
-    title: "Reverse-Chronological",
+    title: "Reverse Chronological",
     tag: "Most common",
-    desc: "Your work history listed most-recent-first, organised around clear job titles and achievement bullets. The safest, most ATS-friendly structure for mid-career and senior professionals with a consistent work history.",
-    bestFor: "Mid-career & senior professionals",
+    desc: "Your work history listed most recent first, organised around clear job titles and achievement bullets. The safest, most ATS friendly structure for mid career and senior professionals with a consistent work history.",
+    bestFor: "Mid career & senior professionals",
   },
   {
     icon: Layers,
-    title: "Skills-Based",
+    title: "Skills Based",
     tag: "For freshers & career changers",
     desc: "Leads with a skills and projects summary before work experience, so relevant capability is visible immediately, built for graduates, career switchers, or anyone with limited formal experience.",
     bestFor: "Freshers, graduates & career changers",
@@ -47,21 +62,21 @@ const formats = [
     icon: PenTool,
     title: "Combination Format",
     tag: "For leadership roles",
-    desc: "Blends a strong skills/achievements summary at the top with a detailed reverse-chronological history below, built for senior professionals whose career spans multiple functions or industries.",
-    bestFor: "Senior & leadership-track professionals",
+    desc: "Blends a strong skills or achievements summary at the top with a detailed reverse chronological history below, built for senior professionals whose career spans multiple functions or industries.",
+    bestFor: "Senior & leadership track professionals",
   },
-  {
-    icon: ImageIcon,
-    title: "Infographic Resume",
-    tag: "Premium add-on",
-    desc: "A visually structured, one-page companion resume with icon-led sections and skill visualisations, designed to complement (never replace) your ATS-safe master resume for portfolio and networking use.",
-    bestFor: "Design, creative & client-facing roles",
-  },
+  // {
+  //   icon: ImageIcon,
+  //   title: "Infographic Resume",
+  //   tag: "Premium add on",
+  //   desc: "A visually structured, one page companion resume with icon led sections and skill visualisations, designed to complement (never replace) your ATS safe master resume for portfolio and networking use.",
+  //   bestFor: "Design, creative & client facing roles",
+  // },
   {
     icon: Globe2,
     title: "International & Gulf Formats",
-    tag: "Region-specific",
-    desc: "Country-specific structure and conventions: no photo or date of birth for US & UK resumes, Europass-compatible formatting for EU markets, and Gulf-format CVs for UAE, Saudi Arabia, Qatar, Kuwait & Bahrain.",
+    tag: "Region specific",
+    desc: "Country specific structure and conventions: no photo or date of birth for US & UK resumes, Europass compatible formatting for EU markets, and Gulf format CVs for UAE, Saudi Arabia, Qatar, Kuwait & Bahrain.",
     bestFor: "UK, USA, Canada, Australia, Europe & Gulf applicants",
   },
 ];
@@ -86,7 +101,7 @@ const industries = [
   "🔐 Cybersecurity",
   "📡 Telecom",
   "👨‍🎓 Freshers & Recent Graduates",
-  "🌍 Non-Profit & Development Sector",
+  "🌍 Non Profit & Development Sector",
 ];
 
 export default function ResumeTemplates() {
@@ -107,7 +122,7 @@ export default function ResumeTemplates() {
             The Right <span className="text-gradient-brand">Format</span>, Not Just a Template.
           </h1>
           <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
-            We don't hand you a fixed template. Every resume is built on the ATS-safe structure that best
+            We don't hand you a fixed template. Every resume is built on the ATS safe structure that best
             fits your career stage, industry, and target market, then written from scratch around it.
           </p>
         </div>
@@ -128,7 +143,7 @@ export default function ResumeTemplates() {
               key={t.title}
               className="reveal group relative flex w-full max-w-sm flex-none flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-[color:var(--brand)]/10 sm:w-72"
             >
-              {/* Half-height cropped preview */}
+              {/* Half height cropped preview */}
               <button
                 onClick={() => setPreviewImage(t.image)}
                 className="relative block h-64 w-full overflow-hidden"
@@ -139,7 +154,7 @@ export default function ResumeTemplates() {
                   alt={`${t.title} resume template preview`}
                   className="absolute inset-0 h-full w-full object-cover object-top"
                 />
-                {/* Fade-out to signal there's more below */}
+                {/* Fade out to signal there is more below */}
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/70 to-transparent" />
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex items-center justify-center bg-[color:var(--brand-ink)]/0 transition group-hover:bg-[color:var(--brand-ink)]/40">
@@ -221,7 +236,7 @@ export default function ResumeTemplates() {
             <h3 className="mt-4 font-display text-xl font-semibold">Every Format, ATS Score 80+ Guaranteed</h3>
             <p className="mt-3 text-sm text-white/75">
               Whichever structure fits your career, it's tested against major ATS score checkers before
-              delivery: Workday, Taleo, Greenhouse, and iCIMS. Below 80, we rewrite it at no charge.
+              delivery. Below 80, we rewrite it at no charge.
             </p>
             <Link
               to="/pricing"
@@ -234,7 +249,7 @@ export default function ResumeTemplates() {
       </section>
 
       {/* SAMPLE LAYOUT PREVIEW */}
-      {/* <section className="mx-auto max-w-7xl px-6 pb-16">
+      <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="reveal">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">See It In Action</p>
@@ -243,13 +258,13 @@ export default function ResumeTemplates() {
             </h2>
             <p className="mt-4 text-muted-foreground">
               Every resume we write follows the same underlying discipline: a clear summary up top, skills
-              grouped for fast scanning, achievement-led experience bullets, and education/languages kept
+              grouped for fast scanning, achievement led experience bullets, and education or languages kept
               short and easy to parse. No tables, no text boxes, no graphics that confuse ATS parsers,
               just a structure that gets you past the filter and read by a human.
             </p>
             <ul className="mt-6 space-y-2.5 text-sm">
               {[
-                "Single-column layout that parses cleanly on every major ATS",
+                "Single column layout that parses cleanly on every major ATS",
                 "Section headers ATS software recognises instantly",
                 "Achievement bullets, not duty lists",
                 "Skills grouped for fast recruiter scanning",
@@ -269,22 +284,28 @@ export default function ResumeTemplates() {
           </div>
 
         
-          <div className="reveal relative">
+          <div className="reveal relative flex justify-center">
             <div className="absolute -inset-6 rounded-[2rem] gradient-brand opacity-15 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
+
+            <div className="relative w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
               <img
-                src="/resume-sample-ats.jpg"
-                alt="Sample ATS-optimised resume written by Prolance Resume"
-                className="w-full object-contain"
+                src="/templates/resume7.jpeg"
+                alt="Sample ATS optimised resume written by Prolance Resume"
+                className="mx-auto w-80 object-contain"
               />
+
               <div className="flex items-center justify-between border-t border-border bg-white px-5 py-3">
-                <span className="text-[11px] font-medium text-muted-foreground">Tested against Workday, Taleo, Greenhouse, iCIMS</span>
-                <span className="rounded-full gradient-brand px-2.5 py-1 text-[10px] font-bold text-white">ATS 80+</span>
+                {/* <span className="text-[11px] font-medium text-muted-foreground">
+                  Tested against Workday, Taleo, Greenhouse, iCIMS
+                </span> */}
+                <span className="rounded-full gradient-brand px-2.5 py-1 text-[10px] font-bold text-white">
+                  ATS 80+
+                </span>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* INDUSTRIES */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
@@ -317,8 +338,8 @@ export default function ResumeTemplates() {
             <div className="max-w-xl">
               <h2 className="font-display text-3xl font-bold sm:text-4xl">Not Sure Which Format Fits You?</h2>
               <p className="mt-3 text-white/85">
-                Message us your current role, experience, and target market, and we'll tell you exactly which
-                format we'd write for you, free of charge.
+                Message us your current role, experience, and target market, and we will tell you exactly which
+                format we would write for you, free of charge.
               </p>
             </div>
             <div className="flex flex-col gap-3">

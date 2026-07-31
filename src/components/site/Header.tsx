@@ -8,7 +8,7 @@ const links = [
   { to: "/resume-templates", label: "Resume Templates" },
   { to: "/linkedin-optimisation", label: "LinkedIn Optimisation" },
   { to: "/blogs", label: "Blogs" },
-  { to: "/faq", label: "Faq" },
+  { to: "/faq", label: "FAQs" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -41,15 +41,15 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-1.5">
-  <img
-    src="/logo.png"
-    alt="Prolance Resume"
-    className="h-10 w-10 object-contain"
-  />
-  <span className="font-display text-lg font-bold tracking-tight">
-    Prolance <span className="text-gradient-brand">Resume</span>
-  </span>
-</Link>
+          <img
+            src="/logo.png"
+            alt="Prolance Resume"
+            className="h-10 w-10 object-contain"
+          />
+          <span className="font-display text-lg font-bold tracking-tight">
+            Prolance <span className="text-gradient-brand">Resume</span>
+          </span>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-0.5 md:flex">
