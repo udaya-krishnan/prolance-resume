@@ -11,14 +11,14 @@ import ResumeTemplates from './pages/resume-templates'
 import { Header } from './components/site/Header'
 import { Footer } from './components/site/Footer'
 import { WhatsAppFab } from './components/site/WhatsAppFab'
-// import { AnnouncementBar } from './components/site/AnnouncementBar'
+import { AnnouncementBar } from './components/site/AnnouncementBar'
 import { Toaster } from 'sonner'
 import Faq from './pages/faq'
 
 export default function App() {
   return (
     <>
-      {/* <AnnouncementBar /> */}
+      <AnnouncementBar />
       <Header />
       <main>
         <Routes>

@@ -5,7 +5,7 @@ import {
   Rocket, Target, Link2, Sparkle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { AnnouncementBar } from "../components/site/AnnouncementBar";
+// import { AnnouncementBar } from "../components/site/AnnouncementBar";
 
 function useCounter(target: number, ms = 1500) {
   const [n, setN] = useState(0);
@@ -618,7 +618,7 @@ export default function Home() {
           </p>
           <p className="mt-2 text-xs text-muted-foreground">100% Satisfaction Guarantee, we revise until you love it.</p>
         </div>
-        <AnnouncementBar/>
+        {/* <AnnouncementBar/> */}
       </section>
 
       {/* CTA */}
