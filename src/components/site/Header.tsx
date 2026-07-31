@@ -7,6 +7,7 @@ const links = [
   { to: "/pricing", label: "Pricing" },
   { to: "/resume-templates", label: "Resume Templates" },
   { to: "/linkedin-optimisation", label: "LinkedIn Optimisation" },
+  { to: "/seafarers",label:"Seafarers"},
   { to: "/blogs", label: "Blogs" },
   { to: "/faq", label: "FAQs" },
   { to: "/contact", label: "Contact" },

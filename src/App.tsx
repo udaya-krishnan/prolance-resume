@@ -14,6 +14,7 @@ import { WhatsAppFab } from './components/site/WhatsAppFab'
 import { AnnouncementBar } from './components/site/AnnouncementBar'
 import { Toaster } from 'sonner'
 import Faq from './pages/faq'
+import Seafarers from './pages/seafarers'
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/linkedin-optimisation" element={<LinkedInOptimisation />} />
           <Route path="/resume-templates" element={<ResumeTemplates />} />
           <Route path="/faq" element={<Faq/>}/>
+          <Route path="/seafarers" element={<Seafarers/>}/>
 
           {/* Blog */}
           <Route path="/blogs" element={<Blogs />} />
