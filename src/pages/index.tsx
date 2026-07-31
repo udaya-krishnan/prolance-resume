@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, CheckCircle2, FileText, Briefcase,
-  Star, Users, Trophy, Quote, ShieldCheck, Zap,
+  Star, Users, Trophy, ShieldCheck, Zap,
   Rocket, Target, Link2, Sparkle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
