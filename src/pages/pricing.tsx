@@ -47,7 +47,7 @@ const pricing = [
       "Cover Letter",
       "Resume Customisation Prompts",
       "Interview Prep Prompt Guide",
-      "Provided in Any 2 Templates”",
+      "Provided in Any 2 Templates",
       "Delivery in 48 Hours",
     ],
   },

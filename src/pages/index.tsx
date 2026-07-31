@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, CheckCircle2, FileText, Briefcase,
-  Star, Users, Trophy, ShieldCheck, Zap,
+  Star, Users, Trophy, Quote, ShieldCheck, Zap,
   Rocket, Target, Link2, Sparkle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-// import { AnnouncementBar } from "../components/site/AnnouncementBar";
 
 function useCounter(target: number, ms = 1500) {
   const [n, setN] = useState(0);
@@ -39,17 +38,17 @@ function Stat({ value, suffix, label }: { value: number; suffix?: string; label:
 }
 
 const services = [
-  { icon: FileText, title: "ATS-Friendly Resume Writing", desc: "Professionally written, keyword-rich resumes optimised for ATS platforms and tailored to your target role, industry, and experience level. Available for India, Gulf, and international markets." },
-  { icon: Link2, title: "LinkedIn Profile Optimisation", desc: "A complete LinkedIn makeover including headline, about section, skills, experience, and keyword strategy designed to attract recruiter InMails and increase your profile visibility by up to 3x." },
+  { icon: FileText, title: "ATS-Friendly Resume Writing", desc: "Professionally written, keyword rich resumes optimised for ATS platforms and tailored to your target role, industry, and experience level. Available for India, Gulf, and international markets." },
+  { icon: Link2, title: "LinkedIn Profile Optimisation", desc: "A complete LinkedIn makeover headline, about section, skills, experience, and keyword strategy designed to attract recruiter InMails and increase your profile visibility by up to 3x." },
   { icon: Briefcase, title: "Cover Letter Writing", desc: "Persuasive, role-specific cover letters that complement your resume and give recruiters a compelling reason to call you. Tailored to the company culture and job requirements." },
   { icon: Rocket, title: "SOP Writing", desc: "Admission-winning Statements of Purpose for universities in the UK, Canada, Australia, Germany, and Ireland. Personal narratives that connect your academic journey with your future aspirations." },
 ];
 
 const steps = [
-  { icon: Target, title: "Start on WhatsApp", desc: "Message us for a free consultation. Tell us your target role and market, and we will recommend the right package instantly." },
+  { icon: Target, title: "Start on WhatsApp", desc: "Message us for a free consultation. Tell us your target role and market we'll recommend the right package instantly." },
   { icon: Zap, title: "Pick Your Plan", desc: "Choose from our Starter, Standard, and Premium plans based on your career stage and needs." },
   { icon: Sparkle, title: "Share Your Details", desc: "Fill out our short career brief or share your existing resume. Your assigned writer crafts a tailored, ATS-optimised document." },
-  { icon: ShieldCheck, title: "Get Your Resume", desc: "Receive your professionally written resume within 24 to 48 hours. Includes 30 days of editing support and exclusive AI Guides with Premium." },
+  { icon: ShieldCheck, title: "Get Your Resume", desc: "Receive your professionally written resume within 24–48 hours. Includes 30 days of editing support and exclusive AI Guides with Premium." },
 ];
 
 const testimonials = [
@@ -57,6 +56,11 @@ const testimonials = [
     name: "Akhil John K.Y",
     role: "Google Review · 6 weeks ago",
     text: "I had a great experience with Prolance Resume. Their team was professional, responsive, and understood my career goals well. They delivered a well-structured, ATS-optimized resume that highlighted my skills and experience effectively. The quality of work and attention to detail exceeded my expectations. I would definitely recommend Prolance Resume to anyone seeking a polished and impactful resume.",
+  },
+  {
+    name:"Moncy Easo",
+    role: "Google Review · 9 weeks ago",
+    text:"I had an excellent experience with Prolance Resume for preparing my matrimony biodata. The team was highly professional, responsive, and attentive to my requirements. They created a well-designed, attractive, and organized biodata that presented my profile in a very impressive manner.Highly recommended."
   },
   {
     name: "Arya Ajith",
@@ -93,11 +97,7 @@ const testimonials = [
     role: "Google Review · 39 weeks ago",
     text: "I had a great experience with Prolance Resume. They completely transformed my resume, making it more professional and ATS-friendly. The team understood my background well and highlighted my skills perfectly. Highly recommend!!",
   },
-  {
-    name: "Aarav Mehta",
-    role: "Google Review · 41 weeks ago",
-    text: "Three interview calls in the first week after the new resume went live. The ROI was unreal.",
-  },
+  
 ];
 
 // const partners = ["Google", "Microsoft", "Amazon", "Stripe", "Meta", "Adobe", "Swiggy", "Razorpay", "Zomato", "Flipkart"];
@@ -112,7 +112,7 @@ const pricing = [
       "Assured ATS Score 80+",
       "30 Days Editing Support",
       "Word + PDF Delivery",
-      "Delivery in 24 to 48 Hours",
+      "Delivery in 24–48 Hours",
     ],
   },
   {
@@ -134,7 +134,7 @@ const pricing = [
     price: "1,499",
     originalPrice: "2,000",
     savingLabel: "Save 25%",
-    desc: "Senior professionals (Most Popular)",
+    desc: "Senior professionals — Most Popular",
     popular: true,
     features: [
       "ATS-Optimised Resume",
@@ -151,12 +151,12 @@ const pricing = [
 ];
 
 const whyUs = [
-  { icon: Zap, title: "24 to 48 Hour Delivery", desc: "Need your resume urgently? Same-day delivery available for priority orders. All standard orders delivered within 24 to 48 hours in Word and PDF formats." },
+  { icon: Zap, title: "24–48 Hour Delivery", desc: "Need your resume urgently? Same day delivery available for priority orders. All standard orders delivered within 24–48 hours in Word and PDF formats." },
   { icon: ShieldCheck, title: "ATS Score 80+ Guaranteed", desc: "Every resume we deliver is tested to achieve a minimum ATS score of 80+." },
   { icon: Sparkle, title: "30 Days Editing Support", desc: "Your career doesn't stop after delivery. We provide 30 days of free editing support after you receive your resume." },
-  { icon: Target, title: "Resume Customisation AI Prompts", desc: "Every package includes our exclusive AI Prompt set, which includes tested prompts you can use with Claude, ChatGPT, and Gemini to tailor your resume for any job description." },
-  { icon: Trophy, title: "98% Interview Callback Rate", desc: "Our clients consistently report interview calls within 1 to 2 weeks. We track outcomes and continuously refine our writing process based on real hiring data." },
-  { icon: Users, title: "20+ Industry Specialists", desc: "From IT and healthcare to finance, oil & gas, engineering, and education, we have dedicated writers who know exactly what recruiters want to see." },
+  { icon: Target, title: "Resume Customisation AI Prompts", desc: "Every package includes our exclusive AI Prompt set tested prompts you can use with Claude, ChatGPT, and Gemini to tailor your resume for any job description." },
+  { icon: Trophy, title: "98% Interview Callback Rate", desc: "Our clients consistently report interview calls within 1–2 weeks. We track outcomes and continuously refine our writing process based on real hiring data." },
+  { icon: Users, title: "20+ Industry Specialists", desc: "From IT and healthcare to finance, oil & gas, engineering, and education dedicated writers who know exactly what recruiters want to see." },
 ];
 
 const resumeMistakes = [
@@ -190,8 +190,8 @@ export default function Home() {
               Your Resume Should <span className="text-gradient-brand">Open Doors</span>, Not Get Filtered Out.
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-              We Don't Just Write Resumes, We Brand You. ATS resumes, cover letters, and LinkedIn optimization
-              with 1:1 consultation, 24-hour delivery, and expert support, built for jobs in India, Gulf, UK,
+              We Don't Just Write Resumes, We Brand You. ATS resumes, cover letters &amp; LinkedIn optimization
+              with 1:1 consultation, 24-hour delivery, and expert support - built for jobs in India, Gulf, UK,
               Canada, Australia, and Europe.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -229,99 +229,133 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── ATS Resume Image Visual ── */}
-          <div className="reveal relative flex items-center justify-center py-8">
+          {/* ── Enhancv-style stacked resume visual ── */}
+          <div className="reveal relative flex items-center justify-center" style={{ minHeight: "600px" }}>
 
             {/* Background glow */}
-            <div className="absolute -inset-6 rounded-[2rem] gradient-brand opacity-20 blur-2xl" />
+            <div className="absolute inset-0 rounded-[3rem] gradient-brand opacity-10 blur-3xl" />
 
-            {/* ── Floating badge: ATS Score top left ── */}
-            <div className="absolute -left-4 top-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-1s] sm:flex">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-[9px] font-bold text-white shadow-sm">
-                90+
-              </span>
-              <div>
-                <div className="text-[11px] font-bold text-foreground">ATS Score 90+</div>
-                <div className="text-[9px] text-muted-foreground">Guaranteed on every resume</div>
-              </div>
+            {/* ── Card back-left: rotated behind ── */}
+            <div
+              className="absolute overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-border/30"
+              style={{
+                width: "240px",
+                top: "20px",
+                left: "0px",
+                transform: "rotate(-8deg)",
+                zIndex: 1,
+                opacity: 0.7,
+              }}
+            >
+              <img
+                src="templates/resume5.jpeg"
+                alt="Resume sample"
+                className="w-full object-cover object-top"
+                style={{ maxHeight: "380px" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent" />
             </div>
 
-            {/* ── Floating badge: Interview Rate bottom left ── */}
-            <div className="absolute -left-4 bottom-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-4s] sm:flex">
-              <Trophy className="h-5 w-5 shrink-0 text-[color:var(--brand)]" />
-              <div>
-                <div className="text-[11px] font-bold text-foreground">98% Interview</div>
-                <div className="text-[9px] text-muted-foreground">Callback Rate</div>
-              </div>
+            {/* ── Card back-right: rotated behind ── */}
+            <div
+              className="absolute overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-border/30"
+              style={{
+                width: "220px",
+                top: "40px",
+                right: "0px",
+                transform: "rotate(7deg)",
+                zIndex: 1,
+                opacity: 0.7,
+              }}
+            >
+              <img
+                src="/templates/resume6.jpeg"
+                alt="Resume sample"
+                className="w-full object-cover object-top"
+                style={{ maxHeight: "360px" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent" />
             </div>
 
-            {/* ── Floating badge: Resumes delivered top right ── */}
-            <div className="absolute -right-4 top-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-6s] sm:flex">
-              <Users className="h-5 w-5 shrink-0 text-[color:var(--brand)]" />
-              <div>
-                <div className="text-[11px] font-bold text-foreground">10,000+</div>
-                <div className="text-[9px] text-muted-foreground">Resumes delivered</div>
-              </div>
-            </div>
-
-            {/* ── Floating badge: 30 Days Support bottom right ── */}
-            <div className="absolute -right-4 bottom-6 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-3s] sm:flex">
-              <ShieldCheck className="h-5 w-5 shrink-0 text-green-500" />
-              <div>
-                <div className="text-[11px] font-bold text-foreground">30 Days</div>
-                <div className="text-[9px] text-muted-foreground">Free editing support</div>
-              </div>
-            </div>
-
-            {/* ── Resume image card ── */}
-            <div className="relative w-full max-w-sm animate-float overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-border/60 lg:max-w-md">
-
-              {/* Window chrome bar */}
-              <div className="flex items-center gap-2 border-b border-border bg-gray-50 px-4 py-2.5">
+            {/* ── Main card: front center ── */}
+            <div
+              className="relative animate-float overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-border/60"
+              style={{ width: "280px", zIndex: 10 }}
+            >
+              {/* Chrome bar */}
+              <div className="flex items-center gap-1.5 border-b border-border bg-gray-50 px-3 py-2.5">
                 <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
                 <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
                 <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
-                <span className="ml-2 flex-1 text-[11px] text-muted-foreground">resume_prolance.pdf</span>
-                <div className="rounded-full gradient-brand px-2.5 py-0.5 text-[10px] font-bold text-white">
-                  ATS / 94%
-                </div>
+                <span className="ml-2 flex-1 truncate text-[10px] text-muted-foreground">resume.pdf</span>
+                <div className="rounded-full gradient-brand px-2 py-0.5 text-[9px] font-bold text-white">ATS 94%</div>
               </div>
 
-              {/* Actual resume image */}
-              <div className="relative">
-                <img
-                  src="/templates/resume5.jpeg"
-                  alt="ATS-optimised resume sample by Prolance Resume"
-                  className="w-full object-cover object-top"
-                  style={{ maxHeight: "480px" }}
-                />
+              {/* Resume image */}
+              <img
+                src="/templates/resume7.jpeg"
+                alt="ATS-optimised resume by Prolance Resume"
+                className="w-full object-cover object-top"
+                style={{ maxHeight: "460px" }}
+              />
 
-                {/* Gradient fade at bottom so it fades out cleanly */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+              {/* Fade bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
 
-                {/* ATS score overlay strip at the bottom */}
-                <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
-                  <div className="rounded-xl border border-border bg-white/95 px-3 py-2.5 shadow-lg backdrop-blur">
-                    <div className="mb-1.5 flex items-center justify-between">
-                      <span className="text-[10px] font-semibold text-muted-foreground">ATS Compatibility Score</span>
-                      <span className="text-[10px] font-bold text-green-600">94 / 100</span>
-                    </div>
-                    <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-[color:var(--brand)] to-green-400"
-                        style={{ width: "94%" }}
-                      />
-                    </div>
-                    <div className="mt-1.5 flex items-center gap-1">
-                      <ShieldCheck className="h-3 w-3 text-green-500" />
-                      <span className="text-[9px] text-muted-foreground">
-                        Passes Workday, Taleo, Greenhouse, and iCIMS
-                      </span>
-                    </div>
+              {/* ATS bar inside card */}
+              <div className="absolute bottom-2 left-2 right-2">
+                <div className="rounded-xl border border-border bg-white/95 px-3 py-2.5 shadow-lg backdrop-blur">
+                  <div className="mb-1.5 flex items-center justify-between">
+                    <span className="text-[10px] font-semibold text-muted-foreground">ATS Score</span>
+                    <span className="text-[10px] font-bold text-green-600">94 / 100</span>
+                  </div>
+                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
+                    <div className="h-full rounded-full bg-gradient-to-r from-[color:var(--brand)] to-green-400" style={{ width: "94%" }} />
+                  </div>
+                  <div className="mt-1.5 flex items-center gap-1">
+                    <ShieldCheck className="h-3 w-3 text-green-500" />
+                    <span className="text-[9px] text-muted-foreground">Passes Workday · Taleo · Greenhouse · iCIMS</span>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* ── Floating badge: ATS Score — top ── */}
+            <div className="absolute top-0 left-1/2 z-20 -translate-x-1/2 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-1s] sm:flex">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-green-500 text-[10px] font-bold text-white">90+</span>
+              <div>
+                <div className="text-[12px] font-bold text-foreground">ATS Score 90+</div>
+                <div className="text-[10px] text-muted-foreground">Guaranteed on every resume</div>
+              </div>
+            </div>
+
+            {/* ── Floating badge: HIRED — right ── */}
+            {/* <div className="absolute right-2 top-1/3 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-green-200 bg-green-50 px-3.5 py-2.5 shadow-xl [animation-delay:-3s] sm:flex">
+              <span className="text-xl">🎉</span>
+              <div>
+                <div className="text-[12px] font-bold text-green-700">HIRED!</div>
+                <div className="text-[10px] text-green-600">Interview in 1 week</div>
+              </div>
+            </div> */}
+
+            {/* ── Floating badge: 98% callback — bottom left ── */}
+            <div className="absolute bottom-0 left-2 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-5s] sm:flex">
+              <Trophy className="h-5 w-5 shrink-0 text-[color:var(--brand)]" />
+              <div>
+                <div className="text-[12px] font-bold text-foreground">98% Callback Rate</div>
+                <div className="text-[10px] text-muted-foreground">10,000+ resumes delivered</div>
+              </div>
+            </div>
+
+            {/* ── Floating badge: 30 Days — bottom right ── */}
+            <div className="absolute bottom-0 right-2 z-20 hidden animate-float items-center gap-2 rounded-2xl border border-border bg-white/95 px-3.5 py-2.5 shadow-xl backdrop-blur [animation-delay:-7s] sm:flex">
+              <ShieldCheck className="h-5 w-5 shrink-0 text-green-500" />
+              <div>
+                <div className="text-[12px] font-bold text-foreground">30 Days Free</div>
+                <div className="text-[10px] text-muted-foreground">Editing support</div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -410,8 +444,8 @@ export default function Home() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Why Choose Us</p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Why Prolance Resume</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            ATS-Optimized, Human-Crafted. Every resume is written by an experienced career professional
-            and then rigorously tested for ATS compatibility before delivery.
+            ATS-Optimized · Human-Crafted. Every resume is written by an experienced career professional
+            then rigorously tested for ATS compatibility before delivery.
           </p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -616,9 +650,8 @@ export default function Home() {
             Available as a standalone service at <strong>₹1,999</strong>, or add to any resume package for up to <strong>30% off</strong>.
             Includes headline rewrite, About section, experience rewrites, skills (top 50), SEO audit, banner design &amp; more.
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">100% Satisfaction Guarantee, we revise until you love it.</p>
+          <p className="mt-2 text-xs text-muted-foreground">100% Satisfaction Guarantee — we revise until you love it.</p>
         </div>
-        {/* <AnnouncementBar/> */}
       </section>
 
       {/* CTA */}
@@ -631,7 +664,7 @@ export default function Home() {
               <h2 className="font-display text-3xl font-bold sm:text-4xl">Ready to Get Shortlisted?</h2>
               <p className="mt-3 text-white/85">
                 Join thousands of professionals across India, Gulf, and the world who landed their dream roles
-                with Prolance Resume. Starting at just ₹899, with same-day delivery available.
+                with Prolance Resume. Starting at just ₹899 — with same-day delivery available.
               </p>
               <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/70">
                 <span>🔒 Secure &amp; Confidential</span>
@@ -647,7 +680,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[color:var(--brand-deep)] transition hover:scale-[1.04]"
               >
-                WhatsApp Us, Free Consultation <ArrowRight className="h-4 w-4" />
+                WhatsApp Us — Free Consultation <ArrowRight className="h-4 w-4" />
               </a>
               <Link
                 to="/pricing"
