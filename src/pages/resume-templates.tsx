@@ -8,7 +8,7 @@ import {
 const templates = [
   {
     title: "Classic Professional",
-    tag: "Corporate & Finance",
+    tag: "Psychology & Counselling",
     image: "/templates/resume.jpeg",
   },
   {

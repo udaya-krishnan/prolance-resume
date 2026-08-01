@@ -75,16 +75,16 @@ const steps = [
 ];
 
 const ranks = [
-  "Cadet",
-  "Officer",
-  "Chief Officer",
-  "Master Mariner",
-  "Junior Engineer",
+  "Cadet (Deck/Engine)",
+  "Fourth Engineer",
+  "Third Engineer",
   "Second Engineer",
   "Chief Engineer",
-  "Bosun",
-  "AB Seaman",
-  "Shore Job Transition",
+  "Third Officer",
+  "Second Officer",
+  "Chief Officer",
+  "Master",
+  "ETO",
 ];
 
 const whatsappFeatures = [
