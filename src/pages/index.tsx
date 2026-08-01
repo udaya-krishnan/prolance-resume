@@ -248,7 +248,7 @@ export default function Home() {
               }}
             >
               <img
-                src="templates/resume9.jpeg"
+                src="templates/resume7.jpeg"
                 alt="Resume sample"
                 className="w-full object-cover object-top"
                 style={{ maxHeight: "380px" }}
@@ -269,7 +269,7 @@ export default function Home() {
               }}
             >
               <img
-                src="/templates/resume6.jpeg"
+                src="/templates/resume9.jpeg"
                 alt="Resume sample"
                 className="w-full object-cover object-top"
                 style={{ maxHeight: "360px" }}
@@ -293,7 +293,7 @@ export default function Home() {
 
               {/* Resume image */}
               <img
-                src="/templates/resume7.jpeg"
+                src="/templates/resume6.jpeg"
                 alt="ATS-optimised resume by Prolance Resume"
                 className="w-full object-cover object-top"
                 style={{ maxHeight: "460px" }}
