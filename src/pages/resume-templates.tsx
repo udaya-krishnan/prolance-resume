@@ -12,10 +12,11 @@ const templates = [
     image: "/templates/resume.jpeg",
   },
   {
-    title: "Modern Minimal",
-    tag: "IT & Tech",
-    image: "/templates/resume2.jpeg",
+    title: "Offshore Engineering",
+    tag: "Engineering & Energy",
+    image: "/templates/resume6.jpeg",
   },
+  
   {
     title: "Executive Format",
     tag: "Senior & Leadership",
@@ -27,15 +28,16 @@ const templates = [
     image: "/templates/resume3.jpeg",
   },
   {
+    title: "Modern Minimal",
+    tag: "IT & Tech",
+    image: "/templates/resume2.jpeg",
+  },
+  {
     title: "Hospitality & Culinary",
     tag: "Culinary & Hotel Operations",
     image: "/templates/resume7.jpeg",
   },
-  {
-    title: "Offshore Engineering",
-    tag: "Engineering & Energy",
-    image: "/templates/resume6.jpeg",
-  },
+  
   {
     title: "Modern Two Column",
     tag: "Education & Aviation",
