@@ -15,6 +15,8 @@ import { AnnouncementBar } from './components/site/AnnouncementBar'
 import { Toaster } from 'sonner'
 import Faq from './pages/faq'
 import Seafarers from './pages/seafarers'
+import PrivacyPolicy from './pages/privacypolicy'
+import Terms from './pages/terms'
 
 export default function App() {
   return (
@@ -35,6 +37,8 @@ export default function App() {
           <Route path="/resume-templates" element={<ResumeTemplates />} />
           <Route path="/faq" element={<Faq/>}/>
           <Route path="/seafarers" element={<Seafarers/>}/>
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
 
           {/* Blog */}
           <Route path="/blogs" element={<Blogs />} />

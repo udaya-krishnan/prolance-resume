@@ -62,7 +62,7 @@ export function Footer() {
           <div className="mt-5 flex gap-3">
             {/* Facebook */}
             <a
-              href="https://www.facebook.com/prolanceresume"
+              href="https://www.facebook.com/profile.php?id=61561987294775"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -74,7 +74,7 @@ export function Footer() {
             </a>
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/prolanceresume"
+              href="https://www.instagram.com/prolance_resume/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -86,7 +86,7 @@ export function Footer() {
             </a>
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/company/prolanceresume"
+              href="https://www.linkedin.com/company/prolance-resume"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

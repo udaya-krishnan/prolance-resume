@@ -561,7 +561,7 @@ export default function Home() {
         {/* Google Reviews CTA */}
         <div className="reveal mt-8 text-center">
           <a
-            href="https://g.co/kgs/prolanceresume"
+            href="https://share.google/FNLXm0YvsLs3FHs8l"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-foreground/70 shadow-sm transition hover:shadow-md"
