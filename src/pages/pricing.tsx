@@ -193,7 +193,7 @@ export default function Pricing() {
                   {pricing.map((p) => (
                     <div
                       key={p.name}
-                      className={`reveal relative rounded-3xl border p-8 transition hover:-translate-y-1 ${
+                      className={`reveal relative flex flex-col rounded-3xl border p-8 transition hover:-translate-y-1 ${
                         p.popular
                           ? "border-transparent gradient-brand text-white shadow-2xl shadow-[color:var(--brand)]/30"
                           : "border-border bg-white"
@@ -220,7 +220,7 @@ export default function Pricing() {
                           {p.savingLabel}
                         </span>
                       )}
-                      <ul className="mt-6 space-y-3">
+                      <ul className="mt-6 flex-1 space-y-3">
                         {p.features.map((f) => (
                           <li key={f} className="flex items-start gap-2 text-sm">
                             <CheckCircle2
