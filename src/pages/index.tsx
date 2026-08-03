@@ -106,7 +106,6 @@ const pricing = [
   {
     name: "Starter",
     price: "899",
-    desc: "Fresh graduates & early careers",
     features: [
       "ATS-Optimised Resume",
       "Assured ATS Score 80+",
@@ -118,7 +117,6 @@ const pricing = [
   {
     name: "Standard",
     price: "1,299",
-    desc: "Mid-career professionals",
     features: [
       "ATS-Optimised Resume",
       "Assured ATS Score 80+",
@@ -134,7 +132,6 @@ const pricing = [
     price: "1,499",
     originalPrice: "2,000",
     savingLabel: "Save 25%",
-    desc: "Senior professionals — Most Popular",
     popular: true,
     features: [
       "ATS-Optimised Resume",
@@ -582,7 +579,7 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="reveal text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand)]">Pricing</p>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Simple, Experience-Based Pricing</h2>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Choose The Package That Fits You!</h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">No hidden charges. No upsells. Just results.</p>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -601,7 +598,7 @@ export default function Home() {
                 </span>
               )}
               <h3 className="font-display text-xl font-bold">{p.name}</h3>
-              <p className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>{p.desc}</p>
+              {/* <p className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>{p.desc}</p> */}
               <div className="mt-6 flex items-end gap-1">
                 {p.originalPrice && (
                   <span className={`pb-1 text-sm line-through ${p.popular ? "text-white/50" : "text-muted-foreground"}`}>

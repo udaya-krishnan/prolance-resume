@@ -9,7 +9,6 @@ const pricing = [
   {
     name: "Starter",
     price: "899",
-    desc: "Fresh graduates & early careers",
     features: [
       "ATS-Optimised Resume",
       "Assured ATS Score 80+",
@@ -21,7 +20,6 @@ const pricing = [
   {
     name: "Standard",
     price: "1,299",
-    desc: "Mid-career professionals",
     features: [
       "ATS-Optimised Resume",
       "Assured ATS Score 80+",
@@ -37,7 +35,6 @@ const pricing = [
     price: "1,499",
     originalPrice: "2,000",
     savingLabel: "Save 25%",
-    desc: "Senior professionals — Most Popular",
     popular: true,
     features: [
       "ATS-Optimised Resume",
@@ -179,7 +176,7 @@ export default function Pricing() {
             Pricing
           </span>
           <h1 className="reveal mt-5 font-display text-4xl font-bold sm:text-5xl lg:text-6xl">
-            Simple, <span className="text-gradient-brand">Experience-Based</span> Pricing.
+            Choose <span className="text-gradient-brand">The Package</span>That Fits You!
           </h1>
           <p className="reveal mx-auto mt-5 max-w-2xl text-muted-foreground">
             No hidden charges. No upsells. Just results, with an assured ATS score of 80+ on every resume we deliver.
@@ -205,7 +202,7 @@ export default function Pricing() {
                         </span>
                       )}
                       <h3 className="font-display text-xl font-bold">{p.name}</h3>
-                      <p className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>{p.desc}</p>
+                      {/* <p className={`mt-1 text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>{p.desc}</p> */}
                       <div className="mt-6 flex items-end gap-1">
                         {p.originalPrice && (
                           <span className={`pb-1 text-sm line-through ${p.popular ? "text-white/50" : "text-muted-foreground"}`}>
