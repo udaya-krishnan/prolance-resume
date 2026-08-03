@@ -4,7 +4,7 @@ import {
   Phone,
   MapPin,
   Clock,
-  MessageCircle,
+
   ArrowRight,
   ShieldCheck,
 } from "lucide-react";
